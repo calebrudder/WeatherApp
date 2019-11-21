@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <TextBlock>Welcome message with data binding to name and weather type and time</TextBlock>
-        <TextBlock>brief overview of local weather with data binding</TextBlock>
-        <Image x:ConnectionId='2' Name="result"></Image>
+        <TextBlock x:ConnectionId='2' Name="city">Welcome message with data binding to name and weather type and time</TextBlock>
+        <TextBlock x:ConnectionId='3' Name="temperature">brief overview of local weather with data binding</TextBlock>
+        <Image x:ConnectionId='4' Name="result" Width="20" Height="20"></Image>
     </StackPanel>
 </Page>
 

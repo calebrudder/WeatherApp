@@ -10,23 +10,26 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>a39b4544-f363-4233-8491-caf8974da922</PackageIdentityName>
     <PackageIdentityPublisher>CN=Caleb Rudder</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Caleb Rudder\Documents\GUI\Weather\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\Weather.exe">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Weather.exe">
       <PackagePath>entrypoint\Weather.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\.nuget\packages\microsoft.data.sqlite.core\3.0.1\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
+      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\.nuget\packages\microsoft.net.http\2.2.29\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
@@ -37,58 +40,64 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.8\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\.nuget\packages\sqlitepclraw.core\2.0.0\lib\netstandard2.0\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\Weather.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Weather.xr.xml">
       <PackagePath>Weather.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\About.xbf">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\About.xbf">
       <PackagePath>About.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GUI\Weather\bin\x86\Debug\Core\Weather.exe">
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Core\Weather.exe">
       <PackagePath>Weather.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

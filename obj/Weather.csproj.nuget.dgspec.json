@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Caleb Rudder\\Documents\\GUI\\Weather\\Weather.csproj": {}
+    "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Caleb Rudder\\Documents\\GUI\\Weather\\Weather.csproj": {
+    "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Caleb Rudder\\Documents\\GUI\\Weather\\Weather.csproj",
+        "projectUniqueName": "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj",
         "projectName": "Weather",
-        "projectPath": "C:\\Users\\Caleb Rudder\\Documents\\GUI\\Weather\\Weather.csproj",
+        "projectPath": "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj",
         "packagesPath": "C:\\Users\\Caleb Rudder\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Caleb Rudder\\Documents\\GUI\\Weather\\obj\\",
+        "outputPath": "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -37,6 +37,10 @@
       "frameworks": {
         "uap10.0.16299": {
           "dependencies": {
+            "Microsoft.Data.Sqlite.Core": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.2.8, )"
