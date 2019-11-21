@@ -20,7 +20,8 @@ namespace Weather.DataAccess
         public async static Task<RootObject> GetWeather(int zip, string system)
         {
             HttpClient client = new HttpClient();
-            var response = await client.GetAsync("https://samples.openweathermap.org/data/2.5/weather?zip=72143us&appid=b6907d289e10d714a6e88b30761fae22");
+            string header = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip.ToString() + "&units=" + system + "&appid=ad255140107924a3cce8f9dc305138c1";
+            var response = await client.GetAsync(header);
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(RootObject));
 
