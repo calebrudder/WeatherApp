@@ -33,9 +33,16 @@ namespace Weather
         }
         public async void weather()
         {
-            RootObject myWeather = await WeatherMap.GetWeather(72149, "imperial");
+            int zip = 72149;
+            RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
             string icon = String.Format("http://openweathermap.org/img/wn/{0}.png", myWeather.weather[0].icon);
             result.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
+
+            string temp = myWeather.main.temp.ToString();
+            temperature.Text = temp;
+
+            string cityName = myWeather.name;
+            city.Text = cityName;
         }
     }
 }
