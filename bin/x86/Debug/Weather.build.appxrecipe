@@ -88,6 +88,9 @@
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\About.xbf">
       <PackagePath>About.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AddLocation.xbf">
+      <PackagePath>AddLocation.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>

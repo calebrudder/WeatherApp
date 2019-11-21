@@ -106,3 +106,8 @@ C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\qualifiers.txt.i
 C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885490160000000.json
+C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AddLocation.xbf
+C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\AddLocation.g.i.cs
+C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\AddLocation.g.cs
+C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\AddLocation.xaml
+C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\obj\x86\Debug\AddLocation.xbf

@@ -24,7 +24,7 @@ namespace Weather
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
+        AddLocation location = new AddLocation();
         public MainPage()
         {
             this.InitializeComponent();
