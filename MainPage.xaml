@@ -12,5 +12,6 @@
         <TextBlock Name="city">Welcome message with data binding to name and weather type and time</TextBlock>
         <TextBlock Name="temperature">brief overview of local weather with data binding</TextBlock>
         <Image Name="result" Width="20" Height="20"></Image>
+        <Button x:Name="button" Click="Button_Click">Add Location Page</Button>
     </StackPanel>
 </Page>
