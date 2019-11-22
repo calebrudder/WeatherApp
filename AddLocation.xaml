@@ -8,26 +8,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-           
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="3">Add a Location</TextBlock>
-        <TextBox x:Name="City" Grid.Row="1" Grid.Column="0"></TextBox>
-        <ComboBox x:Name="State" Grid.Row="1" Grid.Column="1"></ComboBox>
-        <TextBox Name="Zip" Grid.Row="1" Grid.Column="2"></TextBox>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0">Make this the city that appears on the home page?</TextBlock>
-        <CheckBox x:Name="DefaultCity_Checkbox" Grid.Row="2" Grid.Column="2"></CheckBox>
-        <Button x:Name="AddCity_Button" Grid.Row="3" Grid.Column="2">Add City</Button>
-    </Grid>
+    <RelativePanel>
+        <TextBlock Name="location_header">Add a Location</TextBlock>
+        <TextBox x:Name="City" RelativePanel.Below="location_header"></TextBox>
+        <ComboBox x:Name="State" RelativePanel.RightOf="City" RelativePanel.Below="location_header"></ComboBox>
+        <TextBox Name="Zip" RelativePanel.RightOf="State" RelativePanel.Below="location_header"></TextBox>
+        <TextBlock Name="default_label" RelativePanel.Below="City">Make this the city that appears on the home page?</TextBlock>
+        <CheckBox x:Name="DefaultCity_Checkbox" RelativePanel.RightOf="default_label" RelativePanel.Below="City"></CheckBox>
+        <Button x:Name="AddCity_Button" RelativePanel.Below="default_label">Add City</Button>
+    </RelativePanel>
 </Page>
