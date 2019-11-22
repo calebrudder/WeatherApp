@@ -8,10 +8,40 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock Name="city">Welcome message with data binding to name and weather type and time</TextBlock>
-        <TextBlock Name="temperature">brief overview of local weather with data binding</TextBlock>
-        <Image Name="result" Width="20" Height="20"></Image>
-        <Button x:Name="button" Click="Button_Click">Add Location Page</Button>
-    </StackPanel>
+    <Grid>
+        <!--Navigation tutorial found at: https://blogs.msdn.microsoft.com/appconsult/2018/05/06/using-the-navigationview-in-your-uwp-applications/-->
+
+        <NavigationView x:Name="nvTopLevelNav"
+                Loaded="nvTopLevelNav_Loaded"
+                Margin="0,12,0,0"
+                SelectionChanged="nvTopLevelNav_SelectionChanged"
+                ItemInvoked="nvTopLevelNav_ItemInvoked"
+                IsTabStop="False"
+                IsSettingsVisible="False"
+                IsBackButtonVisible="Collapsed">
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Home" Tag="Home_Page">
+                    <TextBlock Tag="Nav_Home">Home</TextBlock>
+                </NavigationViewItem>
+                <NavigationViewItem Tag="AllLocations_Page">
+                    <TextBlock Tag="Nav_AllLocations">All Locations</TextBlock>
+                <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE753;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Tag="About_Page">
+                    <TextBlock Tag="Nav_About">About</TextBlock>
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE946;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Icon="Setting" Tag="Settings_Page">
+                    <TextBlock Tag="Nav_Settings">Settings</TextBlock>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="contentFrame"></Frame>
+        </NavigationView>
+               
+    </Grid>
 </Page>

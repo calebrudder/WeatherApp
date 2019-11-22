@@ -25,30 +25,60 @@ namespace Weather
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        AddLocation location = new AddLocation();
         public MainPage()
         {
             this.InitializeComponent();
-
-            weather();
-        }
-        public async void weather()
-        {
-            int zip = 72149;
-            RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
-            string icon = String.Format("http://openweathermap.org/img/wn/{0}.png", myWeather.weather[0].icon);
-            result.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
-
-            string temp = myWeather.main.temp.ToString();
-            temperature.Text = temp;
-
-            string cityName = myWeather.name;
-            city.Text = cityName;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddLocation));
+            foreach (NavigationViewItemBase item in nvTopLevelNav.MenuItems)
+            {
+                if (item is NavigationViewItem && item.Tag.ToString() == "Home_Page")
+                {
+                    nvTopLevelNav.SelectedItem = item;
+                    break;
+                }
+            }
+            contentFrame.Navigate(typeof(Home));
+        }
+
+        private void nvTopLevelNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+
+        }
+
+        private void nvTopLevelNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            if (args.IsSettingsInvoked)
+            {
+                contentFrame.Navigate(typeof(Settings));
+            }
+            else
+            {
+                TextBlock ItemContent = args.InvokedItem as TextBlock;
+                if (ItemContent != null)
+                {
+                    switch (ItemContent.Tag)
+                    {
+                        case "Nav_Home":
+                            contentFrame.Navigate(typeof(Home));
+                            break;
+
+                        case "Nav_AllLocations":
+                            contentFrame.Navigate(typeof(AllLocations));
+                            break;
+
+                        case "Nav_About":
+                            contentFrame.Navigate(typeof(About));
+                            break;
+
+                        case "Nav_Settings":
+                            contentFrame.Navigate(typeof(Settings));
+                            break;
+                    }
+                }
+            }
         }
     }
 }
