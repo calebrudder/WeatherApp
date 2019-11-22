@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "UAP,Version=v10.0.16299": {
+    "UAP,Version=v10.0.17134": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -383,7 +383,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-arm": {
+    "UAP,Version=v10.0.17134/win10-arm": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -944,7 +944,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-arm-aot": {
+    "UAP,Version=v10.0.17134/win10-arm-aot": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -1506,7 +1506,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-arm64-aot": {
+    "UAP,Version=v10.0.17134/win10-arm64-aot": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -2068,7 +2068,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-x64": {
+    "UAP,Version=v10.0.17134/win10-x64": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -2629,7 +2629,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-x64-aot": {
+    "UAP,Version=v10.0.17134/win10-x64-aot": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -3191,7 +3191,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-x86": {
+    "UAP,Version=v10.0.17134/win10-x86": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -3752,7 +3752,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.16299/win10-x86-aot": {
+    "UAP,Version=v10.0.17134/win10-x86-aot": {
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -9000,7 +9000,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "UAP,Version=v10.0.16299": [
+    "UAP,Version=v10.0.17134": [
       "Microsoft.Data.Sqlite.Core >= 3.0.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.8",
       "Microsoft.Net.Http >= 2.2.29"
@@ -9028,20 +9028,20 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "uap10.0.16299"
+        "uap10.0.17134"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "uap10.0.16299": {
+        "uap10.0.17134": {
           "projectReferences": {}
         }
       }
     },
     "frameworks": {
-      "uap10.0.16299": {
+      "uap10.0.17134": {
         "dependencies": {
           "Microsoft.Data.Sqlite.Core": {
             "target": "Package",

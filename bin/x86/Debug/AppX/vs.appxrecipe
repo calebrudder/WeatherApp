@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>515932D887DAA5774EDCF9D111622A5853EF4B9ECEEF50CCE9DDDA4A72174F14</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>6E862B8E09F68FC0F1922D2469803179BF31A43051DBD6ADDF7B777A9A5CEBEC</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>a39b4544-f363-4233-8491-caf8974da922_1.0.0.0_x86__y88bj1v1a0zsw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>a39b4544-f363-4233-8491-caf8974da922_y88bj1v1a0zsw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>a39b4544-f363-4233-8491-caf8974da922</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-11-22T02:15:25.155</Modified>
+      <Modified>2019-11-22T04:42:53.401</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Weather.exe">
       <PackagePath>entrypoint\Weather.exe</PackagePath>
-      <Modified>2019-11-22T02:15:24.691</Modified>
+      <Modified>2019-11-22T04:42:52.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\.nuget\packages\microsoft.data.sqlite.core\3.0.1\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
       <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
@@ -106,23 +106,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Weather.xr.xml">
       <PackagePath>Weather.xr.xml</PackagePath>
-      <Modified>2019-11-22T02:12:16.205</Modified>
+      <Modified>2019-11-22T04:33:11.807</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-11-22T02:15:24.462</Modified>
+      <Modified>2019-11-22T04:42:52.679</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\About.xbf">
       <PackagePath>About.xbf</PackagePath>
-      <Modified>2019-11-22T02:15:24.463</Modified>
+      <Modified>2019-11-22T04:42:52.680</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AddLocation.xbf">
       <PackagePath>AddLocation.xbf</PackagePath>
-      <Modified>2019-11-22T02:15:24.463</Modified>
+      <Modified>2019-11-22T04:42:52.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AllLocations.xbf">
+      <PackagePath>AllLocations.xbf</PackagePath>
+      <Modified>2019-11-22T04:42:52.681</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Expanded_Location.xbf">
+      <PackagePath>Expanded_Location.xbf</PackagePath>
+      <Modified>2019-11-22T04:42:52.681</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Home.xbf">
+      <PackagePath>Home.xbf</PackagePath>
+      <Modified>2019-11-22T04:42:52.681</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-11-22T02:15:24.463</Modified>
+      <Modified>2019-11-22T04:42:52.681</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Settings.xbf">
+      <PackagePath>Settings.xbf</PackagePath>
+      <Modified>2019-11-22T04:42:52.682</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -130,11 +146,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-11-22T02:08:52.014</Modified>
+      <Modified>2019-11-22T04:18:01.853</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Core\Weather.exe">
       <PackagePath>Weather.exe</PackagePath>
-      <Modified>2019-11-22T02:15:25.150</Modified>
+      <Modified>2019-11-22T04:42:53.396</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
