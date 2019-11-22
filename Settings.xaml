@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Weather.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Weather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel>
+        <TextBlock Name="Settings_Title"></TextBlock>
+        <TextBlock Name="Preferred_Name_Label" RelativePanel.Below="Settings_Title"></TextBlock>
+        <TextBox Name="Name_Textbox" RelativePanel.Below="Preferred_Name_Label"></TextBox>
+        <TextBlock Name="City_Label" RelativePanel.Below="Name_Textbox"></TextBlock>
+        <TextBox Name="City" RelativePanel.Below="City_Label"></TextBox>
+        <ComboBox Name="State" RelativePanel.Below="City_Label" RelativePanel.RightOf="City"></ComboBox>
+        <TextBox Name="Zip" RelativePanel.Below="City_Label" RelativePanel.RightOf="State"></TextBox>
+        <TextBlock Name="Measurment_Label" RelativePanel.Below="Zip"></TextBlock>
+        <RadioButton Name="Imperial" RelativePanel.Below="Measurment_Label"></RadioButton>
+        <RadioButton Name="Metric" RelativePanel.Below="Measurment_Label" RelativePanel.RightOf="Imperial"></RadioButton>
+        <TextBlock Name="App_Font" RelativePanel.Below="Metric"></TextBlock>
+        <ComboBox Name="Current_Font_Settings" RelativePanel.Below="Metric" RelativePanel.RightOf="App_Font"></ComboBox>
+
+    </RelativePanel>
+</Page>
