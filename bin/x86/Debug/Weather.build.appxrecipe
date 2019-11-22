@@ -91,8 +91,17 @@
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AddLocation.xbf">
       <PackagePath>AddLocation.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\AllLocations.xbf">
+      <PackagePath>AllLocations.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Expanded_Location.xbf">
+      <PackagePath>Expanded_Location.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Caleb Rudder\Documents\GitHub\WeatherApp\bin\x86\Debug\Settings.xbf">
+      <PackagePath>Settings.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
