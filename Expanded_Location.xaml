@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Weather.Expanded_Location"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Weather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel>
+        <TextBlock x:Name="City_Name"></TextBlock>
+        <TextBlock x:Name="Current_Temp" RelativePanel.Below="City_Name"></TextBlock>
+        <TextBlock x:Name="Temp_High" RelativePanel.Below="Current_Temp"></TextBlock>
+        <TextBlock x:Name="Temp_Low" RelativePanel.Below="Current_Temp" RelativePanel.RightOf="Temp_High"></TextBlock>
+        <TextBlock x:Name="Description" RelativePanel.Below="Temp_High"></TextBlock>
+        <StackPanel x:Name="Five_Day_Forecast" RelativePanel.Below="Description" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="Day_Of_Week"></TextBlock>
+                <Image x:Name="Daily_Icon"></Image>
+                <TextBlock x:Name="Daily_High"></TextBlock>
+                <TextBlock x:Name="Daily_Low"></TextBlock>
+                <TextBlock x:Name="Percipitation"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <Grid x:Name="Weather_Details" RelativePanel.Below="Five_Day_Forecast">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock x:Name="Sunrise" Grid.Row="0" Grid.Column="0"></TextBlock>
+            <TextBlock x:Name="Wind_Speed" Grid.Row="1" Grid.Column="0"></TextBlock>
+            <TextBlock x:Name="Humidity" Grid.Row="2" Grid.Column="0"></TextBlock>
+            <TextBlock x:Name="Sunset" Grid.Row="0" Grid.Column="1"></TextBlock>
+            <TextBlock x:Name="Wind_Direction" Grid.Row="1" Grid.Column="1"></TextBlock>
+            <TextBlock x:Name="Clouds" Grid.Row="2" Grid.Column="1"></TextBlock>
+        </Grid>
+        
+    </RelativePanel>
+</Page>
