@@ -127,6 +127,9 @@
     </Compile>
     <Compile Include="DataAccess\SqliteDb.cs" />
     <Compile Include="DataAccess\WeatherMap.cs" />
+    <Compile Include="Expanded_Location.xaml.cs">
+      <DependentUpon>Expanded_Location.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddLocation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Expanded_Location.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
