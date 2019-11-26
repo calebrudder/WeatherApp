@@ -8,13 +8,17 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock>Your Favorite Weather App!</TextBlock>
-        <TextBlock>Designed and Created by: Jonathan Casper and Caleb Rudder</TextBlock>
-        <RichTextBlock>
-            <Paragraph>&#x27A4;Customize your app by changing the options in the settings page</Paragraph>
-            <Paragraph>&#x27A4;You can add multiple locations that you are interested in on the location page</Paragraph>
-            <Paragraph>&#x27A4;Click on a location to view a full foecast and a 5-day outlook.</Paragraph>
+    <RelativePanel>
+        <TextBlock Name="Greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,150,0,0" 
+                   FontSize="30">Your Favorite Weather App!</TextBlock>
+        <TextBlock Name="Credits" RelativePanel.Below="Greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0">Designed and Created by: Jonathan Casper and Caleb Rudder</TextBlock>
+        <RichTextBlock Name="Message" RelativePanel.Below="Credits" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0">
+            <Paragraph>&#x27A4;Customize your app by changing</Paragraph>
+            <Paragraph Margin="15,0,0,0">the options in the settings page</Paragraph>
+            <Paragraph Margin="0,10,0,0">&#x27A4;You can add multiple locations that</Paragraph>
+            <Paragraph Margin="15,0,0,0">are interested in on the location page</Paragraph>
+            <Paragraph Margin="0,10,0,0">&#x27A4;Click on a location to full foecast</Paragraph>
+            <Paragraph Margin="15,0,0,0">and a 5-day outlook.</Paragraph>
         </RichTextBlock>
-    </StackPanel>
+    </RelativePanel>
 </Page>
