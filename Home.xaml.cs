@@ -28,6 +28,7 @@ namespace Weather
         public Home()
         {
             this.InitializeComponent();
+            weather();
         }
         public async void weather()
         {
@@ -38,6 +39,13 @@ namespace Weather
 
             string temp = myWeather.main.temp.ToString();
             temperature.Text = temp;
+
+            string Temp_low = myWeather.main.temp_min.ToString();
+            low.Text = Temp_low;
+            string Temp_high = myWeather.main.temp_max.ToString();
+            high.Text = Temp_high;
+            string Temp_wind = myWeather.wind.speed.ToString();
+            wind.Text = Temp_wind;
 
             string cityName = myWeather.name;
             city.Text = cityName;
