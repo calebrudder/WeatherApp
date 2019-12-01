@@ -9,11 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <TextBlock x:Name="City_Name"></TextBlock>
-        <TextBlock x:Name="Current_Temp" RelativePanel.Below="City_Name"></TextBlock>
-        <TextBlock x:Name="Temp_High" RelativePanel.Below="Current_Temp"></TextBlock>
-        <TextBlock x:Name="Temp_Low" RelativePanel.Below="Current_Temp" RelativePanel.RightOf="Temp_High"></TextBlock>
-        <TextBlock x:Name="Description" RelativePanel.Below="Temp_High"></TextBlock>
+        <TextBlock Name="City_Name"></TextBlock>
+        <TextBlock Name="Current_Temp" RelativePanel.Below="City_Name"></TextBlock>
+        <TextBlock Name="Temp_High" RelativePanel.Below="Current_Temp"></TextBlock>
+        <TextBlock Name="Temp_Low" RelativePanel.Below="Current_Temp" RelativePanel.RightOf="Temp_High"></TextBlock>
+        <TextBlock Name="Description" RelativePanel.Below="Temp_High"></TextBlock>
         <StackPanel x:Name="Five_Day_Forecast" RelativePanel.Below="Description" Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <TextBlock x:Name="Day_Of_Week"></TextBlock>
