@@ -46,6 +46,8 @@ namespace Weather
             high.Text = Temp_high;
             string Temp_wind = myWeather.wind.speed.ToString();
             wind.Text = Temp_wind;
+            string Temp_rain = myWeather.main.pressure.ToString();
+            rain.Text = Temp_rain;
 
             string cityName = myWeather.name;
             city.Text = cityName;
