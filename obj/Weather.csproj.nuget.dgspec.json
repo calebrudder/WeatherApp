@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CallMeCasper\\Documents\\GitHub\\WeatherApp\\Weather.csproj": {}
+    "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CallMeCasper\\Documents\\GitHub\\WeatherApp\\Weather.csproj": {
+    "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CallMeCasper\\Documents\\GitHub\\WeatherApp\\Weather.csproj",
+        "projectUniqueName": "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj",
         "projectName": "Weather",
-        "projectPath": "C:\\Users\\CallMeCasper\\Documents\\GitHub\\WeatherApp\\Weather.csproj",
-        "packagesPath": "C:\\Users\\CallMeCasper\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CallMeCasper\\Documents\\GitHub\\WeatherApp\\obj\\",
+        "projectPath": "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\Weather.csproj",
+        "packagesPath": "C:\\Users\\Caleb Rudder\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Caleb Rudder\\Documents\\GitHub\\WeatherApp\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\CallMeCasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Caleb Rudder\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
