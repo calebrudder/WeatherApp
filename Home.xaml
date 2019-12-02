@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <TextBlock Name="message" FontSize="30" RelativePanel.AlignHorizontalCenterWithPanel="True">Your favorite weather app</TextBlock>
+        <TextBlock Name="message" FontSize="30" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,100,0,0">Your favorite weather app</TextBlock>
         <TextBlock Name="city" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="20" Margin="0,10,0,0" RelativePanel.Below="message">Welcome message with data binding to name and weather type and time</TextBlock>
         <TextBlock Name="temperature" RelativePanel.Below="city" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,20,0,0">brief overview of local weather with data binding</TextBlock>
         <Image Name="result" Width="20" Height="20" RelativePanel.Below="temperature" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,20,0,0"></Image>
