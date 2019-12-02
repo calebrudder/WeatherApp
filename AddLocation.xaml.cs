@@ -26,5 +26,10 @@ namespace Weather
         {
             this.InitializeComponent();
         }
+
+        private void AddCity_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
