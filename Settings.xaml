@@ -8,19 +8,56 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <RelativePanel>
-        <TextBlock Name="Settings_Title"></TextBlock>
-        <TextBlock Name="Preferred_Name_Label" RelativePanel.Below="Settings_Title"></TextBlock>
-        <TextBox Name="Name_Textbox" RelativePanel.Below="Preferred_Name_Label"></TextBox>
-        <TextBlock Name="City_Label" RelativePanel.Below="Name_Textbox"></TextBlock>
-        <TextBox Name="City" RelativePanel.Below="City_Label"></TextBox>
-        <ComboBox Name="State" RelativePanel.Below="City_Label" RelativePanel.RightOf="City"></ComboBox>
-        <TextBox Name="Zip" RelativePanel.Below="City_Label" RelativePanel.RightOf="State"></TextBox>
-        <TextBlock Name="Measurment_Label" RelativePanel.Below="Zip"></TextBlock>
-        <RadioButton Name="Imperial" RelativePanel.Below="Measurment_Label"></RadioButton>
-        <RadioButton Name="Metric" RelativePanel.Below="Measurment_Label" RelativePanel.RightOf="Imperial"></RadioButton>
-        <TextBlock Name="App_Font" RelativePanel.Below="Metric"></TextBlock>
-        <ComboBox Name="Current_Font_Settings" RelativePanel.Below="Metric" RelativePanel.RightOf="App_Font"></ComboBox>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Name="Settings_Title" FontSize="48" Padding="20" Grid.Row="0">Settings</TextBlock>
 
-    </RelativePanel>
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Name="Preferred_Name_Label" Margin="0,20,0,10" Grid.Row="0" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What is your preferred name?</TextBlock>
+            <TextBox Name="Name_Textbox" Margin="0,10,0,20" Grid.Row="1" Grid.ColumnSpan="3" Width="600" HorizontalAlignment="Center"></TextBox>
+            <TextBlock Name="City_Label" Margin="20" Grid.Row="2" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What city do you want to see when you log in?</TextBlock>
+            <TextBox Name="City" Margin="0,20" Grid.Row="3" Grid.Column="0"></TextBox>
+            <ComboBox Name="State" Margin="0,20" Grid.Row="3" Grid.Column="1"></ComboBox>
+            <TextBox Name="Zip" Margin="0,20" Grid.Row="3" Grid.Column="2"></TextBox>
+            <TextBlock Name="Measurment_Label" Margin="20" Grid.Row="4" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What measurement system do you use?</TextBlock>
+
+            <Grid Margin="20" Grid.Row="5" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <RadioButton Name="Imperial" Grid.Column="0">Imperial (U.S.)</RadioButton>
+                <RadioButton Name="Metric" Grid.Column="1">Metric</RadioButton>
+            </Grid>
+
+            <Grid Margin="20" Grid.Row="6" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="App_Font" Grid.Column="0">Font Size and Style:</TextBlock>
+                <ComboBox Name="Current_Font_Settings" Grid.Column="1"></ComboBox>
+            </Grid>
+
+        </Grid>
+    </Grid>
 </Page>

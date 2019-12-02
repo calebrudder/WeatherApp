@@ -20,7 +20,9 @@
         <TextBlock Name="temp_wind" RelativePanel.Below="high" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-17,0,5,0">Wind:</TextBlock>
         <TextBlock Name="wind" RelativePanel.Below="high" RelativePanel.RightOf="temp_wind" RelativePanel.AlignHorizontalCenterWithPanel="True">wind</TextBlock>
         <TextBlock Name="temp_rain" RelativePanel.Below="wind" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-16,0,5,0">Rain:</TextBlock>
-        <TextBlock Name="rain" RelativePanel.Below="wind" RelativePanel.RightOf="temp_rain" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+
+        <TextBlock Name="rain" RelativePanel.Below="wind" RelativePanel.RightOf="temp_rain" RelativePanel.AlignHorizontalCenterWithPanel="True">rain</TextBlock>
+
         <Button x:Name="button" Click="Button_Click" RelativePanel.Below="rain" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,10,0,0">Add Location Page</Button>
     </RelativePanel>
 </Page>
