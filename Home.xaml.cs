@@ -32,6 +32,7 @@ namespace Weather
         }
         public async void weather()
         {
+            //if() //if user exists, set to specifications, else do the following
             int zip = 72149;
             RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
             string icon = String.Format("http://openweathermap.org/img/wn/{0}.png", myWeather.weather[0].icon);
