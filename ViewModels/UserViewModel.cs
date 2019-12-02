@@ -9,6 +9,6 @@ namespace Weather.ViewModels
 {
     class UserViewModel
     {
-        private User user;
+        
     }
 }
