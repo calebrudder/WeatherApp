@@ -7,7 +7,7 @@ using Weather.DataAccess;
 
 namespace Weather.Models
 {
-    class Location
+    public class Location
     {
         public int Zip { get; set; }
         public string City { get; set; }
