@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Imaging;
+using Weather.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,12 +31,11 @@ namespace Weather
             this.InitializeComponent();
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
 
-            weather();
         }
-        public async void weather()
+        public async void weather(int Zip)
         {
-            int zip = 72149;
-            RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
+
+            RootObject myWeather = await WeatherMap.GetWeather(Zip, "imperial");
             string cityName = myWeather.name.ToString();
             City_Name.Text = cityName;
             string temp = myWeather.main.temp.ToString();
@@ -49,6 +49,14 @@ namespace Weather
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AllLocations));
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs args)
+        {
+            base.OnNavigatedTo(args);
+
+            var parameters = (ExpandedParams)args.Parameter;
+
+            weather(parameters.Zip);
         }
     }
 }

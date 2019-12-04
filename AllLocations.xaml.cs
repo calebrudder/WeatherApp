@@ -7,6 +7,7 @@ using Weather.Models;
 using Weather.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -33,6 +34,21 @@ namespace Weather
         private void Add_Location_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddLocation));
+        }
+
+        private void Locations_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void Locations_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            LocationViewModel clickedLocation = (sender as ListView).SelectedItem as LocationViewModel;
+            var parameters = new ExpandedParams();
+            parameters.Zip = clickedLocation.Zip;
+
+            this.Frame.Navigate(typeof(Expanded_Location), parameters);
         }
     }
 }
