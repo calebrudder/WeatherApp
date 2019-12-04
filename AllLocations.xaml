@@ -12,7 +12,7 @@
 
     <RelativePanel>
         <ListView Name="Locations" Height="100"  HorizontalAlignment="Stretch"
-                          ItemsSource="{x:Bind User.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged">
+                          ItemsSource="{x:Bind user.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
                     <StackPanel>
