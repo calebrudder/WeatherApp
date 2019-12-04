@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Weather.DataAccess;
+using Windows.Storage;
 
 namespace Weather.Models
 {
@@ -20,12 +22,22 @@ namespace Weather.Models
 
         public User(String Name)
         {
-            Locations = new List<Location>
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("SavedLocations"))
             {
-                new Location{City = "Searcy", State = "AR", Zip = 72143 },
-                new Location{City = "Greenwood", State = "AR", Zip = 72936 },
-                new Location{City = "Cedar Creek", State = "TX", Zip = 78612 }
-            };
+                //get all locations
+                var SavedLocations = ApplicationData.Current.LocalSettings.Values["SavedLocations"] as ApplicationDataCompositeValue;
+                //set locations = to all of these locations
+                string saved = (string)SavedLocations["SavedLocationsList"];
+                Locations = JsonConvert.DeserializeObject<List<Location>>(saved);
+
+            }
+            else
+            {
+                Locations = new List<Location>
+                {
+                     new Location{City = "Searcy", State = "AR", Zip = 72143 }
+                };
+            }
         }
     }
 }

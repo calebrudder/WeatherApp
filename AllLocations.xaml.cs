@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -21,14 +22,12 @@ namespace Weather
 {
     public sealed partial class AllLocations : Page
     {
-        public UserViewModel User { get; set; }
-        public LocationViewModel Location { get; set; }
+        public ObservableCollection<LocationViewModel> LocationsList { get; set; }
+        public UserViewModel user = new UserViewModel(new User(" "));
         public AllLocations()
         {
             this.InitializeComponent();
-
-            Location = new LocationViewModel(new Location());
-            User = new UserViewModel(new User("Caleb"));
+           
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
 
@@ -49,14 +48,12 @@ namespace Weather
 
         protected override void OnNavigatedTo(NavigationEventArgs args)
         {
-            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("locations"))
-            {
-                //get all locations
-            }
-            else
-            {
-                //add searcy location
-            }
+            LocationsList = user.Locations;
         }
+        protected override void OnNavigatedFrom(NavigationEventArgs args)
+        {
+            user.SaveLocations(LocationsList);
+        }
+
     }
 }

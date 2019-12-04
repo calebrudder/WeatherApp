@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Weather.Models;
 
 namespace Weather.ViewModels
@@ -40,7 +41,6 @@ namespace Weather.ViewModels
                 OnPropertyChanged("State");
             }
         }
-
         private void OnPropertyChanged(string property)
         {
             // Notify any controls bound to the ViewModel that the property changed

@@ -17,6 +17,73 @@ namespace Weather.ViewModels
 
         private User user;
         public ObservableCollection<LocationViewModel> Locations { get; set; }
+       
+        public UserViewModel(User user)
+        {
+            this.user = user;
+            Locations = GetLocations();
+
+        }
+
+        public ObservableCollection<LocationViewModel> GetLocations()
+        {
+            ObservableCollection<LocationViewModel> LocationsList = new ObservableCollection<LocationViewModel>();
+
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("SavedLocations"))
+            {
+                //get all locations
+                // Create ViewModels for each Location
+                foreach (var location in user.Locations)
+                {
+                    var newLocation = new LocationViewModel(location);
+                    newLocation.PropertyChanged += OnPropertyChanged;
+                    LocationsList.Add(newLocation);
+                }
+
+            }
+            else
+            {
+                Location location = new Location();
+                location.City = "Searcy";
+                location.State = "AR";
+                location.Zip = 72143;
+                LocationsList = new ObservableCollection<LocationViewModel>
+                {
+                     new LocationViewModel(location)
+                };
+            }
+            return LocationsList;
+        }
+        public void SaveLocations(ObservableCollection<LocationViewModel> LocationsList)
+        {
+            var SavedLocations = new ApplicationDataCompositeValue();
+            string json = JsonConvert.SerializeObject(LocationsList);
+            SavedLocations["SavedLocationsList"] = json;
+            ApplicationData.Current.LocalSettings.Values["SavedLocations"] = SavedLocations;
+        }
+
+        public void Save()
+        {
+            var settings = new ApplicationDataCompositeValue();
+            settings["Name"] = user.Name;
+            settings["City"] = user.City;
+            settings["State"] = user.State;
+            settings["DefaultZip"] = user.DefaultZip;
+            settings["Imperial"] = user.Imperial;
+            settings["Metric"] = user.Metric;
+            settings["FontId"] = user.FontId;
+            ApplicationData.Current.LocalSettings.Values["settings"] = settings;
+        }
+        public void Update()
+        {
+           string json = JsonConvert.SerializeObject(user);
+        }
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // User name or LocationViewModel changed, so let UI know
+            PropertyChanged?.Invoke(sender, e);
+        }
+
         public string Name
         {
             get { return user.Name; }
@@ -80,42 +147,6 @@ namespace Weather.ViewModels
                 user.State = value;
                 OnPropertyChanged(this, new PropertyChangedEventArgs("State"));
             }
-        }
-        public UserViewModel(User user)
-        {
-            this.user = user;
-
-            Locations = new ObservableCollection<LocationViewModel>();
-
-            // Create ViewModels for each Movie
-            foreach (var location in user.Locations)
-            {
-                var newLocation = new LocationViewModel(location);
-                newLocation.PropertyChanged += OnPropertyChanged;
-                Locations.Add(newLocation);
-            }
-        }
-
-        public void Save()
-        {
-            var settings = new ApplicationDataCompositeValue();
-            settings["Name"] = user.Name;
-            settings["City"] = user.City;
-            settings["State"] = user.State;
-            settings["DefaultZip"] = user.DefaultZip;
-            settings["Imperial"] = user.Imperial;
-            settings["Metric"] = user.Metric;
-            settings["FontId"] = user.FontId;
-            ApplicationData.Current.LocalSettings.Values["settings"] = settings;
-        }
-        public void Update()
-        {
-           string json = JsonConvert.SerializeObject(user);
-        }
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            // User name or LocationViewModel changed, so let UI know
-            PropertyChanged?.Invoke(sender, e);
         }
     }
 }
