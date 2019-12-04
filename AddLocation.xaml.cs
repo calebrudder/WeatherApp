@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Weather.Models;
+using Weather.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -17,19 +19,29 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Weather
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+
     public sealed partial class AddLocation : Page
     {
+        public UserViewModel User { get; set; }
+        public LocationViewModel Location { get; set; }
         public AddLocation()
         {
             this.InitializeComponent();
+
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+            Location = new LocationViewModel(new Location());
+            User = new UserViewModel(new User("Caleb"));
         }
 
         private void AddCity_Button_Click(object sender, RoutedEventArgs e)
         {
+            User.Locations.Add(new LocationViewModel(
+                new Models.Location { State = "AR", City = "Fort Smith", Zip = 72109 }));
+        }
 
+        private void Cancel_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllLocations));
         }
     }
 }

@@ -16,5 +16,6 @@
         <TextBlock Name="default_label" RelativePanel.Below="City" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,35,20,0">Set as default?</TextBlock>
         <CheckBox x:Name="DefaultCity_Checkbox" RelativePanel.RightOf="default_label" RelativePanel.Below="City" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0"></CheckBox>
         <Button x:Name="AddCity_Button" RelativePanel.Below="default_label" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="235,30,0,0" Width="100" Click="AddCity_Button_Click">Add City</Button>
+        <Button x:Name="Cancel_Button" RelativePanel.Below="default_label" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="100" Click="Cancel_Button_Click">Cancel</Button>
     </RelativePanel>
 </Page>

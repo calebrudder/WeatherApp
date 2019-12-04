@@ -3,32 +3,50 @@ using Weather.Models;
 
 namespace Weather.ViewModels
 {
-    public class LocationViewModel 
+    public class LocationViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private Location location;
 
-        public void SaveNew()
+        public LocationViewModel(Location location)
         {
-            location.AddToDb();
+            this.location = location;
         }
 
-        public void Delete()
-        {
-            location.RemoveFromDb();
-        }
         public int Zip
         {
             get { return location.Zip; }
+            set
+            {
+                location.Zip = value;
+                OnPropertyChanged("Zip");
+            }
         }
-        public string City
-        {
+        public string City {
             get { return location.City; }
+            set
+            {
+                location.City = value;
+                OnPropertyChanged("City");
+            }
         }
         public string State
         {
             get { return location.State; }
+            set
+            {
+                location.State = value;
+                OnPropertyChanged("State");
+            }
         }
+
+        private void OnPropertyChanged(string property)
+        {
+            // Notify any controls bound to the ViewModel that the property changed
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+
     }
 
 }

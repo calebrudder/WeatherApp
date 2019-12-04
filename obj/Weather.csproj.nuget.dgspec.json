@@ -52,6 +52,10 @@
             "Microsoft.NetFX20": {
               "target": "Package",
               "version": "[1.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [

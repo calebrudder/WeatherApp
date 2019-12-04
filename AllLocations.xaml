@@ -11,7 +11,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <ListView Name="Locations">
+        <ListView Name="Locations" Height="155" Width="216" HorizontalAlignment="Left"
+                          ItemsSource="{x:Bind User.Locations, Mode=OneWay}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
                     <StackPanel>
@@ -23,7 +24,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Height="200" Width="200" Content="+" FontSize="120">
+        <Button x:Name="Add_Location" RelativePanel.Below="Locations" Height="200" Width="200" Content="+" FontSize="120" Click="Add_Location_Click">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="White" />

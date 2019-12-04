@@ -13,14 +13,14 @@ namespace Weather.Models
         public string City { get; set; }
         public string State { get; set; }
 
-        public void AddToDb()
+        public void Save()
         {
-            SqliteDb.AddLocation(this);
+            
         }
 
-        public void RemoveFromDb()
+        public void Delete()
         {
-            SqliteDb.DeleteLocation(Zip);
+            
         }
     }
 }
