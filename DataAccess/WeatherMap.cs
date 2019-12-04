@@ -17,10 +17,10 @@ namespace Weather.DataAccess
     public class WeatherMap
     {
 
-        public async static Task<RootObject> GetWeather(int zip, string system)
+        public async static Task<RootObject> GetWeather(string zip, string system)
         {
             HttpClient client = new HttpClient();
-            string header = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip.ToString() + "&units=" + system + "&appid=ad255140107924a3cce8f9dc305138c1";
+            string header = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&units=" + system + "&appid=ad255140107924a3cce8f9dc305138c1";
             var response = await client.GetAsync(header);
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(RootObject));

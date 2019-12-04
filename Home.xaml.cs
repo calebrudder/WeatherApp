@@ -17,21 +17,21 @@ namespace Weather
         }
         public async void weather()
         {
-            int zip;
+            string zip;
 
             if(ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
                 var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
-                
+
+                zip = settings["DefaultZip"].ToString();
                 // UserObject = JsonConvert.DeserializeObject<>(json);
-                zip = 72149;
                 //UserObject.Zip;
                 //message.Text = "Welcome, " + UserObject.Name + ", the weather looks "
                 //temperature.Text = "It is currently " + UserObject.Temp + " degrees in " + UserObject.
             }
             else
             {
-                zip = 72149;
+                zip = "72149";
             }
             RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
             string icon = String.Format("http://openweathermap.org/img/wn/{0}.png", myWeather.weather[0].icon);
