@@ -9,11 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <TextBlock Name="City_Name"></TextBlock>
-        <TextBlock Name="Current_Temp" RelativePanel.Below="City_Name"></TextBlock>
-        <TextBlock Name="Temp_High" RelativePanel.Below="Current_Temp"></TextBlock>
-        <TextBlock Name="Temp_Low" RelativePanel.Below="Current_Temp" RelativePanel.RightOf="Temp_High"></TextBlock>
-        <TextBlock Name="Description" RelativePanel.Below="Temp_High"></TextBlock>
+        <Button Name="Back_Button" Click="Back_Button_Click">Back</Button> 
+        <TextBlock Name="City_Name" RelativePanel.Below="Back_Button" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,50,0,10"></TextBlock>
+        <TextBlock Name="Current_Temp" RelativePanel.Below="City_Name" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+        <TextBlock Name="Temp_Low" RelativePanel.Below="Current_Temp" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-45,0,10,0"></TextBlock>
+        <TextBlock Name="Temp_High" RelativePanel.Below="Current_Temp" RelativePanel.RightOf="Temp_Low" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+        <TextBlock Name="Description" RelativePanel.Below="Temp_High" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
         <StackPanel x:Name="Five_Day_Forecast" RelativePanel.Below="Description" Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <TextBlock x:Name="Day_Of_Week"></TextBlock>
@@ -41,6 +42,5 @@
             <TextBlock x:Name="Wind_Direction" Grid.Row="1" Grid.Column="1"></TextBlock>
             <TextBlock x:Name="Clouds" Grid.Row="2" Grid.Column="1"></TextBlock>
         </Grid>
-        <Button Name="Back_Button" Click="Back_Button_Click">Back</Button> 
     </RelativePanel>
 </Page>

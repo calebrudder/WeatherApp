@@ -38,12 +38,24 @@ namespace Weather
             RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
             string cityName = myWeather.name.ToString();
             City_Name.Text = cityName;
-            string temp = myWeather.main.temp.ToString();
-            Current_Temp.Text = temp;
-            string Temp_low = myWeather.main.temp_min.ToString();
-            Temp_Low.Text = Temp_low;
-            string Temp_high = myWeather.main.temp_max.ToString();
-            Temp_High.Text = Temp_high;
+
+            double tempD = myWeather.main.temp;
+            int tempI = Convert.ToInt32(tempD);
+            string tempS = tempI.ToString();
+            Current_Temp.Text = "Temp: " + tempS;
+
+            tempD = myWeather.main.temp_max;
+            tempI = Convert.ToInt32(tempD);
+            tempS = tempI.ToString();
+            Temp_High.Text = "Max: " + tempS;
+
+            tempD = myWeather.main.temp_min;
+            tempI = Convert.ToInt32(tempD);
+            tempS = tempI.ToString();
+            Temp_Low.Text = "Min: " + tempS;
+
+
+            Description.Text = myWeather.weather[0].description;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

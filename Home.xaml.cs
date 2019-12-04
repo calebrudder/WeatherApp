@@ -23,7 +23,7 @@ namespace Weather
         public async void weather()
         {
             string zip, system, userName;
-            string Greeting = "";
+            string Greeting;
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
