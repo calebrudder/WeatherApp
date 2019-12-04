@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Weather.Models;
+using Windows.Storage;
 
 namespace Weather.ViewModels
 {
@@ -25,7 +26,7 @@ namespace Weather.ViewModels
                 OnPropertyChanged(this, new PropertyChangedEventArgs("Name"));
             }
         }
-        public int DefaultZip
+        public string DefaultZip
         {
             get { return user.DefaultZip; }
             set
@@ -34,13 +35,22 @@ namespace Weather.ViewModels
                 OnPropertyChanged(this, new PropertyChangedEventArgs("DefaultZip"));
             }
         }
-        public int MeasurmentSystem
+        public bool Imperial
         {
-            get { return user.MeasurmentSystem; }
+            get { return user.Imperial; }
             set
             {
-                user.MeasurmentSystem = value;
-                OnPropertyChanged(this, new PropertyChangedEventArgs("MeasurmentSystem"));
+                user.Imperial = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Imperial"));
+            }
+        }
+        public bool Metric
+        {
+            get { return user.Metric; }
+            set
+            {
+                user.Metric = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Metric"));
             }
         }
         public int FontId
@@ -50,6 +60,25 @@ namespace Weather.ViewModels
             {
                 user.FontId = value;
                 OnPropertyChanged(this, new PropertyChangedEventArgs("FontId"));
+            }
+        }
+
+        public string City
+        {
+            get { return user.City; }
+            set
+            {
+                user.City = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("City"));
+            }
+        }
+        public string State
+        {
+            get { return user.State; }
+            set
+            {
+                user.State = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("State"));
             }
         }
         public UserViewModel(User user)
@@ -69,8 +98,15 @@ namespace Weather.ViewModels
 
         public void Save()
         {
-            string json = JsonConvert.SerializeObject(user);
-
+            var settings = new ApplicationDataCompositeValue();
+            settings["Name"] = user.Name;
+            settings["City"] = user.City;
+            settings["State"] = user.State;
+            settings["DefaultZip"] = user.DefaultZip;
+            settings["Imperial"] = user.Imperial;
+            settings["Metric"] = user.Metric;
+            settings["FontId"] = user.FontId;
+            ApplicationData.Current.LocalSettings.Values["settings"] = settings;
         }
         public void Update()
         {

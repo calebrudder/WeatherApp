@@ -24,13 +24,21 @@ namespace Weather
         public Settings()
         {
             this.InitializeComponent();
+            user = new UserViewModel(new User(""));
         }
         protected override void OnNavigatedTo(NavigationEventArgs args)
         {
-            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("json"))
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
                 //settings = user settings
+                var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
 
+                user.Name = (string)settings["Name"];
+                user.City = (string)settings["City"];
+                user.State = (string)settings["State"];
+                user.DefaultZip = (string)settings["DefaultZip"];
+                user.Imperial = (bool)settings["Imperial"];
+                user.Metric = (bool)settings["Metric"];
                 /*
                  * 1. create user obj
                  * 2. bind user information
@@ -39,20 +47,28 @@ namespace Weather
             else
             {
                 //settings = default settings
+                
+                user.DefaultZip = "72149";
+                user.City = "Searcy";
+                user.State = "AR";
+                user.FontId = 1;
+                user.Name = "";
+                user.Imperial = true;
+                user.Metric = false;
             }
+            
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs args)
         {
             //save user information
-            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("json"))
-            {
-               //user.update
-            }
-            else
-            {
-                //user.save
-            }
+            user.Name = Name_Textbox.Text;
+            user.City = City.Text;
+            user.State = State.Text;
+            user.DefaultZip = Zip.Text;
+            user.Imperial = (bool)Imperial.IsChecked;
+            user.Metric = (bool)Metric.IsChecked;
+            user.Save();
         }
 
     }

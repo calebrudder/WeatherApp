@@ -19,9 +19,10 @@ namespace Weather
         {
             int zip;
 
-            if(ApplicationData.Current.LocalSettings.Values.ContainsKey("json"))
+            if(ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
-                string json = ApplicationData.Current.LocalSettings.Values["json"] as string;
+                var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
+                
                 // UserObject = JsonConvert.DeserializeObject<>(json);
                 zip = 1;//UserObject.Zip;
                 //message.Text = "Welcome, " + UserObject.Name + ", the weather looks "
@@ -48,7 +49,7 @@ namespace Weather
             wind.Text = Temp_wind;
 
             string cityName = myWeather.name;
-            city.Text = cityName;
+            greeting.Text = cityName;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

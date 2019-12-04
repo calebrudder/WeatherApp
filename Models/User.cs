@@ -10,8 +10,11 @@ namespace Weather.Models
     public class User
     {
         public string Name { get; set; }
-        public int DefaultZip { get; set; }
-        public int MeasurmentSystem { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string DefaultZip { get; set; }
+        public bool Imperial { get; set; }
+        public bool Metric { get; set; }
         public int FontId { get; set; }
         public List<Location> Locations { get; set; }
 

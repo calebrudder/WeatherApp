@@ -33,11 +33,11 @@
             </Grid.ColumnDefinitions>
             
             <TextBlock Name="Preferred_Name_Label" Margin="0,20,0,10" Grid.Row="0" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What is your preferred name?</TextBlock>
-            <TextBox Name="Name_Textbox" Margin="0,10,0,20" Grid.Row="1" Grid.ColumnSpan="3" Width="600" HorizontalAlignment="Center"></TextBox>
+            <TextBox Name="Name_Textbox" Margin="0,10,0,20" Grid.Row="1" Grid.ColumnSpan="3" Width="600" HorizontalAlignment="Center" Text="{x:Bind user.Name, Mode=OneWay}"></TextBox>
             <TextBlock Name="City_Label" Margin="20" Grid.Row="2" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What city do you want to see when you log in?</TextBlock>
-            <TextBox Name="City" Margin="0,20" Grid.Row="3" Grid.Column="0"></TextBox>
+            <TextBox Name="City" Margin="0,20" Grid.Row="3" Grid.Column="0" Text="{x:Bind user.City, Mode=OneWay}"></TextBox>
             <ComboBox Name="State" Margin="0,20" Grid.Row="3" Grid.Column="1"></ComboBox>
-            <TextBox Name="Zip" Margin="0,20" Grid.Row="3" Grid.Column="2"></TextBox>
+            <TextBox Name="Zip" Margin="0,20" Grid.Row="3" Grid.Column="2" Text="{x:Bind user.DefaultZip, Mode=OneWay}"></TextBox>
             <TextBlock Name="Measurment_Label" Margin="20" Grid.Row="4" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What measurement system do you use?</TextBlock>
 
             <Grid Margin="20" Grid.Row="5" Grid.ColumnSpan="3">
@@ -45,8 +45,8 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <RadioButton Name="Imperial" Grid.Column="0">Imperial (U.S.)</RadioButton>
-                <RadioButton Name="Metric" Grid.Column="1">Metric</RadioButton>
+                <RadioButton Name="Imperial" Grid.Column="0" IsChecked="{x:Bind user.Imperial, Mode=OneWay}">Imperial (U.S.)</RadioButton>
+                <RadioButton Name="Metric" Grid.Column="1" IsChecked="{x:Bind user.Metric, Mode=OneWay}">Metric</RadioButton>
             </Grid>
 
             <Grid Margin="20" Grid.Row="6" Grid.ColumnSpan="3">
