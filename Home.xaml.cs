@@ -24,7 +24,8 @@ namespace Weather
                 var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
                 
                 // UserObject = JsonConvert.DeserializeObject<>(json);
-                zip = 1;//UserObject.Zip;
+                zip = 72149;
+                //UserObject.Zip;
                 //message.Text = "Welcome, " + UserObject.Name + ", the weather looks "
                 //temperature.Text = "It is currently " + UserObject.Temp + " degrees in " + UserObject.
             }
