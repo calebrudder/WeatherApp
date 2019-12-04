@@ -7,17 +7,22 @@ using Weather.DataAccess;
 
 namespace Weather.Models
 {
-    class User
+    public class User
     {
         public string Name { get; set; }
         public int DefaultZip { get; set; }
         public int MeasurmentSystem { get; set; }
         public int FontId { get; set; }
-        public int Id = 0;
+        public List<Location> Locations { get; set; }
 
-        public void UpdateDb()
+        public User(String Name)
         {
-            SqliteDb.UpdateUser(this);
+            Locations = new List<Location>
+            {
+                new Location{City = "Searcy", State = "AR", Zip = 72143 },
+                new Location{City = "Greenwood", State = "AR", Zip = 72936 },
+                new Location{City = "Cedar Creek", State = "TX", Zip = 78612 }
+            };
         }
     }
 }

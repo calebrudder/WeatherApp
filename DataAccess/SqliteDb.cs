@@ -59,7 +59,7 @@ namespace Weather.DataAccess
                 cmd.Connection = conn;
 
                 cmd.CommandText = "INSERT INTO User VALUES(@Id, @Name, @DefaultZip, @MeasurementSystem, @FontId)";
-                cmd.Parameters.AddWithValue("@ID", user.Id);
+                //cmd.Parameters.AddWithValue("@ID", user.Id);
                 cmd.Parameters.AddWithValue("@Name", user.Name);
                 cmd.Parameters.AddWithValue("@DefaultZip", user.DefaultZip);
                 cmd.Parameters.AddWithValue("@MeasurementSystem", user.MeasurmentSystem);

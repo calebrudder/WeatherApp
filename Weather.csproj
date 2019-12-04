@@ -128,7 +128,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\SqliteDb.cs" />
     <Compile Include="DataAccess\WeatherMap.cs" />
     <Compile Include="Expanded_Location.xaml.cs">
       <DependentUpon>Expanded_Location.xaml</DependentUpon>
@@ -210,6 +209,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.NetFX20">
       <Version>1.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
