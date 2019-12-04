@@ -69,45 +69,17 @@ namespace Weather
             // Determine if it is evening, afternoon, or morning
             if (Hour == 12 || Hour >= 1 && Hour <= 7 && AmPm == "PM")
             {
-                Greeting = "Good afternoon " + userName;// + ", the weather is " + myWeather;
+                Greeting = "Good afternoon " + userName + ", looks like " + myWeather.weather[0].description;
                 greeting.Text = Greeting;
             }
             else if (Hour >= 8 && AmPm == "PM")
             {
-                Greeting = "Good Evening " + userName;// + ", the weather is " + myWeather.weather;
+                Greeting = "Good Evening " + userName + ", looks like " + myWeather.weather[0].description;
                 greeting.Text = Greeting;
             }
             else if (Hour >= 1 && Hour <= 11 && AmPm == "PM")
             {
-                Greeting = "Good Morning " + userName;// + ", the weather is " + myWeather.weather;
-                greeting.Text = Greeting;
-            }
-
-            string temp = myWeather.main.temp.ToString();
-            temperature.Text = temp;
-
-            // Determine the temperature
-            string Temp = temp.Remove(2);
-            int Temperature = Int32.Parse(Temp);
-
-            if (Temperature <= 60 && Temperature >= 40 && system == "imperial")
-            {
-                Greeting += ", the temperature is cool";
-                greeting.Text = Greeting;
-            }
-            else if (Temperature >= 61 && Temperature <= 80 && system == "imperial")
-            {
-                Greeting += ", the temperature is nice";
-                greeting.Text = Greeting;
-            }
-            else if (Temperature <= 59 && Temperature >= 33 && system == "imperial")
-            {
-                Greeting += ", the temperature is cold";
-                greeting.Text = Greeting;
-            }
-            else if (Temperature <= 32 && system == "imperial")
-            {
-                Greeting += ", the temperature is freezing";
+                Greeting = "Good Morning " + userName + ", looks like " + myWeather.weather[0].description;
                 greeting.Text = Greeting;
             }
 
