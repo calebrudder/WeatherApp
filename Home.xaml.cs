@@ -18,15 +18,35 @@ namespace Weather
         }
         protected override void OnNavigatedTo(NavigationEventArgs args)
         {
+            weather();
+        }
+        public async void weather()
+        {
+            string zip, system, userName;
+            string Greeting = "";
 
-            if(ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
                 var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
+
+                userName = settings["Name"].ToString();
+                zip = settings["DefaultZip"].ToString();
+
+                if ((bool)settings["Metric"] == true)
+                {
+                    system = "metric";
+                }
+                else
+                {
+                    system = "imperial";
+                }
 
             }
             else
             {
                 zip = "72149";
+                userName = "";
+                system = "imperial";
             }
             RootObject myWeather = await WeatherMap.GetWeather(zip, system);
             string icon = String.Format("http://openweathermap.org/img/wn/{0}.png", myWeather.weather[0].icon);
@@ -36,7 +56,7 @@ namespace Weather
             // Get local time
             string time = DateTime.Now.ToString("h:mm tt");
             string hour = time[0].ToString();
-            if(time[1] != ':')
+            if (time[1] != ':')
             {
                 hour += time[1].ToString();
             }
@@ -57,7 +77,7 @@ namespace Weather
                 Greeting = "Good Evening " + userName;// + ", the weather is " + myWeather.weather;
                 greeting.Text = Greeting;
             }
-            else if(Hour >= 1 && Hour <= 11 && AmPm == "PM")
+            else if (Hour >= 1 && Hour <= 11 && AmPm == "PM")
             {
                 Greeting = "Good Morning " + userName;// + ", the weather is " + myWeather.weather;
                 greeting.Text = Greeting;
