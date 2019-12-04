@@ -41,6 +41,6 @@
             <TextBlock x:Name="Wind_Direction" Grid.Row="1" Grid.Column="1"></TextBlock>
             <TextBlock x:Name="Clouds" Grid.Row="2" Grid.Column="1"></TextBlock>
         </Grid>
-        
+        <Button Name="Back_Button" Click="Back_Button_Click">Back</Button> 
     </RelativePanel>
 </Page>

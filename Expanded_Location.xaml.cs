@@ -28,6 +28,8 @@ namespace Weather
         public Expanded_Location()
         {
             this.InitializeComponent();
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+
             weather();
         }
         public async void weather()
@@ -42,6 +44,11 @@ namespace Weather
             Temp_Low.Text = Temp_low;
             string Temp_high = myWeather.main.temp_max.ToString();
             Temp_High.Text = Temp_high;
+        }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllLocations));
         }
     }
 }
