@@ -11,7 +11,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <ListView Name="Locations" Height="155" Width="216" HorizontalAlignment="Left"
+        <ListView Name="Locations" Height="100"  HorizontalAlignment="Stretch"
                           ItemsSource="{x:Bind User.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
@@ -24,14 +24,15 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button x:Name="Add_Location" RelativePanel.Below="Locations" Height="200" Width="200" Content="+" FontSize="120" Click="Add_Location_Click">
+        <Button x:Name="Add_Location" RelativePanel.Below="Locations" RelativePanel.AlignRightWithPanel="True"
+                  Height="100" Width="100" Content="+" VerticalContentAlignment="Center" FontSize="100" Click="Add_Location_Click">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="White" />
                     <Setter Property="Foreground" Value="Black" />
                     <Setter Property="BorderBrush" Value="Black" />
                     <Setter Property="BorderThickness" Value="2" />
-                    <Setter Property="Padding" Value="8,4,8,4" />
+                    <Setter Property="Padding" Value="0,0,0,0" />
                     <Setter Property="HorizontalAlignment" Value="Right" />
                     <Setter Property="VerticalAlignment" Value="Center" />
                     <Setter Property="UseSystemFocusVisuals" Value="True" />

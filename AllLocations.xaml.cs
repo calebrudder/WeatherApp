@@ -7,6 +7,7 @@ using Weather.Models;
 using Weather.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -36,11 +37,6 @@ namespace Weather
             this.Frame.Navigate(typeof(AddLocation));
         }
 
-        private void Locations_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
         private void Locations_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -49,6 +45,18 @@ namespace Weather
             parameters.Zip = clickedLocation.Zip;
 
             this.Frame.Navigate(typeof(Expanded_Location), parameters);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs args)
+        {
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("locations"))
+            {
+                //get all locations
+            }
+            else
+            {
+                //add searcy location
+            }
         }
     }
 }
