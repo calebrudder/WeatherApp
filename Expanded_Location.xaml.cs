@@ -34,8 +34,8 @@ namespace Weather
         }
         public async void weather(int Zip)
         {
-
-            RootObject myWeather = await WeatherMap.GetWeather(Zip, "imperial");
+            string zip = Zip.ToString();
+            RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
             string cityName = myWeather.name.ToString();
             City_Name.Text = cityName;
             string temp = myWeather.main.temp.ToString();
