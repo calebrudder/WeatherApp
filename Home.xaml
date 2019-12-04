@@ -10,8 +10,8 @@
 
     <RelativePanel>
         <TextBlock Name="message" FontSize="30" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,100,0,0">Your favorite weather app</TextBlock>
-        <TextBlock Name="city" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="20" Margin="0,10,0,0" RelativePanel.Below="message">Welcome message with data binding to name and weather type and time</TextBlock>
-        <TextBlock Name="temperature" RelativePanel.Below="city" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,20,0,0">brief overview of local weather with data binding</TextBlock>
+        <TextBlock Name="greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="20" Margin="0,10,0,0" RelativePanel.Below="message" Text=""></TextBlock>
+        <TextBlock Name="temperature" RelativePanel.Below="greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,20,0,0">brief overview of local weather with data binding</TextBlock>
         <Image Name="result" Width="20" Height="20" RelativePanel.Below="temperature" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,20,0,0"></Image>
         <TextBlock Name="temp_low" RelativePanel.Below="result" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-13,0,5,0">Low:</TextBlock>
         <TextBlock Name="low" RelativePanel.RightOf="temp_low" RelativePanel.Below="result" RelativePanel.AlignHorizontalCenterWithPanel="True">low</TextBlock>
