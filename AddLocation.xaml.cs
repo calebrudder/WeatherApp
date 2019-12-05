@@ -7,6 +7,7 @@ using Weather.Models;
 using Weather.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,18 +31,62 @@ namespace Weather
 
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
             Location = new LocationViewModel(new Location());
-            User = new UserViewModel(new User("Caleb"));
+            User = new UserViewModel(new User(" "));
         }
 
         private void AddCity_Button_Click(object sender, RoutedEventArgs e)
         {
+            string addCity = City.Text;
+            string addState = State.Text;
+            string addZip = Zip.Text;
+
+            if (DefaultCity_Checkbox.IsChecked == true)
+            {
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
+                {
+                    //settings = user settings
+                    var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
+
+                    User.Name = (string)settings["Name"];
+                    User.City = addCity;
+                    User.State = addState;
+                    User.DefaultZip = addZip;
+                    User.Imperial = (bool)settings["Imperial"];
+                    User.Metric = (bool)settings["Metric"];
+                    User.Save();
+
+                }
+                else
+                {
+                    //settings = default settings
+                    User.City = addCity;
+                    User.State = addState;
+                    User.DefaultZip = addZip;
+                    User.FontId = 1;
+                    User.Name = "";
+                    User.Imperial = true;
+                    User.Metric = false;
+                    User.Save();
+                }
+            }
+
             User.Locations.Add(new LocationViewModel(
-                new Models.Location { State = "AR", City = "Fort Smith", Zip = 72109 }));
+                new Models.Location { State = addState, City = addCity, Zip = addZip }));
+           
+            this.Frame.Navigate(typeof(AllLocations));
         }
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AllLocations));
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs args)
+        {
+            base.OnNavigatedTo(args);
+
+            var parameters = (UserViewModel)args.Parameter;
+
+            User = parameters;
         }
     }
 }

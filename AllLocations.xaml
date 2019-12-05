@@ -15,17 +15,20 @@
                           ItemsSource="{x:Bind user.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind City, Mode=OneWay}" FontWeight="Bold"/>
-                        <TextBlock Text="{x:Bind State, Mode=OneWay}"/>
-                        <TextBlock Text="{x:Bind Zip, Mode=OneWay}"/>
-                    </StackPanel>
+                    <RelativePanel>
+                        <TextBlock x:Name="City" Text="{x:Bind City, Mode=OneWay}" FontWeight="Bold">
+                            
+                        </TextBlock>
+                        <TextBlock x:Name="State" Text="{x:Bind State, Mode=OneWay}" RelativePanel.RightOf="City"/>
+                        <TextBlock Name="" Text="{x:Bind Zip, Mode=OneWay}"/>
+                        <TextBlock>Click to see more details</TextBlock>
+                    </RelativePanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
         <Button x:Name="Add_Location" RelativePanel.Below="Locations" RelativePanel.AlignRightWithPanel="True"
-                  Height="100" Width="100" Content="+" VerticalContentAlignment="Center" FontSize="100" Click="Add_Location_Click">
+                  Height="100" Width="100" Content="+" VerticalContentAlignment="Center" FontSize="100" Click="Add_Location_Click" ToolTipService.ToolTip="Add Location">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="White" />

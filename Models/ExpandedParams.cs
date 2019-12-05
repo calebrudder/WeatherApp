@@ -8,6 +8,6 @@ namespace Weather.Models
 {
     class ExpandedParams
     {
-        public int Zip { get; set; }
+        public string Zip { get; set; }
     }
 }

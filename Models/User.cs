@@ -35,7 +35,7 @@ namespace Weather.Models
             {
                 Locations = new List<Location>
                 {
-                     new Location{City = "Searcy", State = "AR", Zip = 72143 }
+                     new Location{City = "Searcy", State = "AR", Zip = "72143" }
                 };
             }
         }

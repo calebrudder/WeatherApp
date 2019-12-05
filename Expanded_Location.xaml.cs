@@ -32,7 +32,7 @@ namespace Weather
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
 
         }
-        public async void weather(int Zip)
+        public async void weather(string Zip)
         {
             string zip = Zip.ToString();
             RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");

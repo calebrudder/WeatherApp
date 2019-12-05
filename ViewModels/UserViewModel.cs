@@ -46,13 +46,18 @@ namespace Weather.ViewModels
                 Location location = new Location();
                 location.City = "Searcy";
                 location.State = "AR";
-                location.Zip = 72143;
+                location.Zip = "72143";
                 LocationsList = new ObservableCollection<LocationViewModel>
                 {
                      new LocationViewModel(location)
                 };
             }
             return LocationsList;
+        }
+
+        public void AddLocation(Location location)
+        {
+             
         }
         public void SaveLocations(ObservableCollection<LocationViewModel> LocationsList)
         {

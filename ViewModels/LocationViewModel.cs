@@ -1,6 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
+using Weather.DataAccess;
 using Weather.Models;
+using Windows.Storage;
 
 namespace Weather.ViewModels
 {
@@ -11,11 +14,19 @@ namespace Weather.ViewModels
         private Location location;
 
         public LocationViewModel(Location location)
-        {
+        {  
             this.location = location;
         }
-
-        public int Zip
+        public string information
+        {
+            get { return location.information; }
+            set
+            {
+                location.Zip = value;
+                OnPropertyChanged("Information");
+            }
+        }
+        public string Zip
         {
             get { return location.Zip; }
             set
