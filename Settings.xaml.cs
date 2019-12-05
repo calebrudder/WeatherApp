@@ -38,6 +38,7 @@ namespace Weather
                 user.City = (string)settings["City"];
                 user.State = (string)settings["State"];
                 user.DefaultZip = (string)settings["DefaultZip"];
+                user.FontId = Convert.ToInt32(settings["FontId"]);
                 user.Imperial = (bool)settings["Imperial"];
                 user.Metric = (bool)settings["Metric"];
             }
@@ -48,7 +49,7 @@ namespace Weather
                 user.DefaultZip = "72149";
                 user.City = "Searcy";
                 user.State = "AR";
-                user.FontId = 1;
+                user.FontId = 16;
                 user.Name = "";
                 user.Imperial = true;
                 user.Metric = false;
@@ -62,6 +63,7 @@ namespace Weather
             user.Name = Name_Textbox.Text;
             user.City = City.Text;
             user.State = State.SelectedValue.ToString();
+            user.FontId = Convert.ToInt32(Current_Font_Settings.SelectedValue);
             user.DefaultZip = Zip.Text;
             user.Imperial = (bool)Imperial.IsChecked;
             user.Metric = (bool)Metric.IsChecked;
