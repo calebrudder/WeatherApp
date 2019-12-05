@@ -88,6 +88,8 @@ namespace Weather
                 user.DefaultZip = newzip;
                 user.Imperial = (bool)settings["Imperial"];
                 user.Metric = (bool)settings["Metric"];
+                user.FontId = (int)settings["FontId"];
+                user.FontSize = (string)settings["FontSize"];
                 user.Save();
 
             }

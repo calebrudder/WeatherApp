@@ -56,6 +56,8 @@ namespace Weather
                     User.City = addCity;
                     User.State = addState;
                     User.DefaultZip = addZip;
+                    User.FontId = (int)settings["FontId"];
+                    User.FontSize = (string)settings["FontSize"];
                     User.Imperial = (bool)settings["Imperial"];
                     User.Metric = (bool)settings["Metric"];
                     User.Save();
@@ -68,6 +70,7 @@ namespace Weather
                     User.State = addState;
                     User.DefaultZip = addZip;
                     User.FontId = 16;
+                    User.FontSize = "16";
                     User.Name = "";
                     User.Imperial = true;
                     User.Metric = false;
