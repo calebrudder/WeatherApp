@@ -105,7 +105,7 @@ namespace Weather
             }
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private async void Delete_ClickAsync(object sender, RoutedEventArgs e)
         {
 
             foreach (var location in LocationsList)
@@ -124,7 +124,7 @@ namespace Weather
                     });
                     confirm.DefaultCommandIndex = 0;
                     confirm.CancelCommandIndex = 1;
-                    var result = confirm.ShowAsync();
+                    var result = await confirm.ShowAsync();
                     if ((int)result.Id == 0)
                     {
                         LocationsList.Remove(Locations.SelectedItem as LocationViewModel);
@@ -146,7 +146,7 @@ namespace Weather
             rightClicked = (sender as ListView).SelectedItem as LocationViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_ClickAsync(object sender, RoutedEventArgs e)
         {
             Button deleteBtn = e.OriginalSource as Button;
            
@@ -166,7 +166,7 @@ namespace Weather
                     });
                     confirm.DefaultCommandIndex = 0;
                     confirm.CancelCommandIndex = 1;
-                    var result = confirm.ShowAsync();
+                    var result = await confirm.ShowAsync();
                     if ((int)result.Id == 0)
                     {
                         LocationsList.Remove(LocationsList.Where(i => i.Zip == deleteBtn.Name).Single());
