@@ -28,7 +28,7 @@ namespace Weather
             user = new UserViewModel(new User(""));
         }
         protected override void OnNavigatedTo(NavigationEventArgs args)
-        {
+        {        
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
                 //settings = user settings
@@ -39,8 +39,10 @@ namespace Weather
                 user.State = (string)settings["State"];
                 user.DefaultZip = (string)settings["DefaultZip"];
                 user.FontId = Convert.ToInt32(settings["FontId"]);
+                user.FontSize = settings["FontId"].ToString();
                 user.Imperial = (bool)settings["Imperial"];
                 user.Metric = (bool)settings["Metric"];
+                user.FontSize = settings["FontId"].ToString();
             }
             else
             {
@@ -50,6 +52,7 @@ namespace Weather
                 user.City = "Searcy";
                 user.State = "AR";
                 user.FontId = 16;
+                user.FontSize = "16";
                 user.Name = "";
                 user.Imperial = true;
                 user.Metric = false;
@@ -64,6 +67,7 @@ namespace Weather
             user.City = City.Text;
             user.State = State.SelectedValue.ToString();
             user.FontId = Convert.ToInt32(Current_Font_Settings.SelectedValue);
+            user.FontSize = Current_Font_Settings.Text;
             user.DefaultZip = Zip.Text;
             user.Imperial = (bool)Imperial.IsChecked;
             user.Metric = (bool)Metric.IsChecked;
