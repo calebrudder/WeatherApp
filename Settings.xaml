@@ -13,7 +13,7 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <TextBlock Name="Settings_Title" FontSize="48" Padding="20" Grid.Row="0">Settings</TextBlock>
 
         <Grid Grid.Row="1" VerticalAlignment="Center">
@@ -31,13 +31,66 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <TextBlock Name="Preferred_Name_Label" Margin="0,20,0,10" Grid.Row="0" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What is your preferred name?</TextBlock>
-            <TextBox Name="Name_Textbox" Margin="0,10,0,20" Grid.Row="1" Grid.ColumnSpan="3" Width="600" HorizontalAlignment="Center" Text="{x:Bind user.Name, Mode=OneWay}"></TextBox>
+            <TextBox Name="Name_Textbox" Margin="20,10,20,20" Grid.Row="1" Grid.ColumnSpan="3" Width="600" HorizontalAlignment="Center" Text="{x:Bind user.Name, Mode=OneWay}"></TextBox>
             <TextBlock Name="City_Label" Margin="20" Grid.Row="2" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What city do you want to see when you log in?</TextBlock>
-            <TextBox Name="City" Margin="0,20" Grid.Row="3" Grid.Column="0" Text="{x:Bind user.City, Mode=OneWay}"></TextBox>
-            <ComboBox Name="State" Margin="0,20" Grid.Row="3" Grid.Column="1"></ComboBox>
-            <TextBox Name="Zip" Margin="0,20" Grid.Row="3" Grid.Column="2" Text="{x:Bind user.DefaultZip, Mode=OneWay}"></TextBox>
+            <TextBox Name="City" Margin="30,20" Grid.Row="3" Grid.Column="0" Text="{x:Bind user.City, Mode=OneWay}"></TextBox>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3">City Name</TextBlock>
+            <ComboBox Name="State" Grid.Row="3" Grid.Column="1" PlaceholderText="choose state" VerticalAlignment="Center" SelectedValue="{x:Bind user.State, Mode=OneWay}" HorizontalAlignment="Center" >
+                <x:String>AL</x:String>
+                <x:String>AK</x:String>
+                <x:String>AZ</x:String>
+                <x:String>AR</x:String>
+                <x:String>CA</x:String>
+                <x:String>CO</x:String>
+                <x:String>CT</x:String>
+                <x:String>DE</x:String>
+                <x:String>FL</x:String>
+                <x:String>GA</x:String>
+                <x:String>HI</x:String>
+                <x:String>ID</x:String>
+                <x:String>IL</x:String>
+                <x:String>IN</x:String>
+                <x:String>IA</x:String>
+                <x:String>KS</x:String>
+                <x:String>KY</x:String>
+                <x:String>LA</x:String>
+                <x:String>ME</x:String>
+                <x:String>MD</x:String>
+                <x:String>MA</x:String>
+                <x:String>MI</x:String>
+                <x:String>MN</x:String>
+                <x:String>MS</x:String>
+                <x:String>MO</x:String>
+                <x:String>MT</x:String>
+                <x:String>NE</x:String>
+                <x:String>NV</x:String>
+                <x:String>NH</x:String>
+                <x:String>NJ</x:String>
+                <x:String>NM</x:String>
+                <x:String>NY</x:String>
+                <x:String>NC</x:String>
+                <x:String>ND</x:String>
+                <x:String>OH</x:String>
+                <x:String>OK</x:String>
+                <x:String>OR</x:String>
+                <x:String>PA</x:String>
+                <x:String>RI</x:String>
+                <x:String>SC</x:String>
+                <x:String>SD</x:String>
+                <x:String>TN</x:String>
+                <x:String>TX</x:String>
+                <x:String>UT</x:String>
+                <x:String>VT</x:String>
+                <x:String>VA</x:String>
+                <x:String>WA</x:String>
+                <x:String>WV</x:String>
+                <x:String>WI</x:String>
+                <x:String>WY</x:String>
+            </ComboBox>
+            <TextBox Name="Zip" Margin="30,20,30,20" Grid.Row="3" Grid.Column="2" Text="{x:Bind user.DefaultZip, Mode=OneWay}"/>
+            <TextBlock Name="ZipCode_Label" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center">Zip code</TextBlock>
             <TextBlock Name="Measurment_Label" Margin="20" Grid.Row="4" Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center">What measurement system do you use?</TextBlock>
 
             <Grid Margin="20" Grid.Row="5" Grid.ColumnSpan="3">
@@ -55,7 +108,14 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Name="App_Font" Grid.Column="0">Font Size and Style:</TextBlock>
-                <ComboBox Name="Current_Font_Settings" Grid.Column="1"></ComboBox>
+                <ComboBox Name="Current_Font_Settings" Grid.Column="1" PlaceholderText="Font" Margin="0,-2,0,0">
+                    <x:String>Serif (16)</x:String>
+                    <x:String>Serif (20)</x:String>
+                    <x:String>Serif (24</x:String>
+                    <x:String>Sans Serif (16)</x:String>
+                    <x:String>Sans Serif (20)</x:String>
+                    <x:String>Sans Serif (24)</x:String>
+                </ComboBox>
             </Grid>
 
         </Grid>

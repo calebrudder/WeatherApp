@@ -22,14 +22,14 @@ namespace Weather
         }
         public async void weather()
         {
-            string zip, system, userName;
-            string Greeting;
+            string zip, system, userName, city, Greeting;
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
                 var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
 
                 userName = settings["Name"].ToString();
+                city = settings["City"].ToString();
                 zip = settings["DefaultZip"].ToString();
 
                 if ((bool)settings["Metric"] == true)
@@ -45,13 +45,13 @@ namespace Weather
             else
             {
                 zip = "72149";
+                city = "Searcy";
                 userName = "";
                 system = "imperial";
             }
             RootObject myWeather = await WeatherMap.GetWeather(zip, system);
             string icon = String.Format("http://openweathermap.org/img/wn/{0}.png", myWeather.weather[0].icon);
             result.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
-
 
             // Get local time
             string time = DateTime.Now.ToString("h:mm tt");
@@ -83,7 +83,7 @@ namespace Weather
                 greeting.Text = Greeting;
             }
 
-            temperature.Text = "It is currently " + myWeather.main.temp.ToString() + " degrees in " + myWeather.name.ToString();
+            temperature.Text = "It is currently " + myWeather.main.temp.ToString() + " degrees in " + city;
 
             string Temp_low = myWeather.main.temp_min.ToString();
             low.Text = Temp_low;
