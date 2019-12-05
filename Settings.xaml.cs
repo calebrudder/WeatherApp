@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Weather.DataAccess;
 using Weather.Models;
 using Weather.ViewModels;
 using Windows.Foundation;
@@ -39,10 +40,6 @@ namespace Weather
                 user.DefaultZip = (string)settings["DefaultZip"];
                 user.Imperial = (bool)settings["Imperial"];
                 user.Metric = (bool)settings["Metric"];
-                /*
-                 * 1. create user obj
-                 * 2. bind user information
-                 */
             }
             else
             {
@@ -64,7 +61,7 @@ namespace Weather
             //save user information
             user.Name = Name_Textbox.Text;
             user.City = City.Text;
-            user.State = State.Text;
+            user.State = State.SelectedValue.ToString();
             user.DefaultZip = Zip.Text;
             user.Imperial = (bool)Imperial.IsChecked;
             user.Metric = (bool)Metric.IsChecked;
