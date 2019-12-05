@@ -18,6 +18,7 @@ namespace Weather.Models
         public bool Imperial { get; set; }
         public bool Metric { get; set; }
         public int FontId { get; set; }
+        public string FontSize { get; set; }
         public List<Location> Locations { get; set; }
 
         public User(String Name)
