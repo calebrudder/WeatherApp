@@ -23,11 +23,12 @@ namespace Weather.ViewModels
         {
             this.user = user;
             Locations = GetLocations();
-
+            
         }
 
         public ObservableCollection<LocationViewModel> GetLocations()
         {
+           
             ObservableCollection<LocationViewModel> LocationsList = new ObservableCollection<LocationViewModel>();
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("SavedLocations"))
@@ -72,6 +73,7 @@ namespace Weather.ViewModels
                 location.City = "Searcy";
                 location.State = "AR";
                 location.Zip = "72143";
+                GetLocalWeatherAsync(location.Zip, "imperial", location);
                 LocationsList = new ObservableCollection<LocationViewModel>
                 {
                      new LocationViewModel(location)
@@ -108,6 +110,7 @@ namespace Weather.ViewModels
             string json = JsonConvert.SerializeObject(LocationsList);
             SavedLocations["SavedLocationsList"] = json;
             ApplicationData.Current.LocalSettings.Values["SavedLocations"] = SavedLocations;
+           
         }
 
         public void Save()

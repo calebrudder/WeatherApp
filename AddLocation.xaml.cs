@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Weather.DataAccess;
 using Weather.Models;
 using Weather.ViewModels;
 using Windows.Foundation;
@@ -23,6 +25,7 @@ namespace Weather
 
     public sealed partial class AddLocation : Page
     {
+        public ObservableCollection<LocationViewModel> LocationsList { get; set; }
         public UserViewModel User { get; set; }
         public LocationViewModel Location { get; set; }
         public AddLocation()
@@ -32,13 +35,15 @@ namespace Weather
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
             Location = new LocationViewModel(new Location());
             User = new UserViewModel(new User(" "));
-        }
+
+    }
 
         private void AddCity_Button_Click(object sender, RoutedEventArgs e)
         {
             string addCity = City.Text;
             string addState = State.Text;
             string addZip = Zip.Text;
+            string system = "imperial";
 
             if (DefaultCity_Checkbox.IsChecked == true)
             {
@@ -69,10 +74,14 @@ namespace Weather
                     User.Save();
                 }
             }
-
-            User.Locations.Add(new LocationViewModel(
-                new Models.Location { State = addState, City = addCity, Zip = addZip }));
            
+
+            LocationsList.Add(new LocationViewModel(
+                new Models.Location { State = addState, City = addCity, Zip = addZip }));
+
+
+            User.SaveLocations(LocationsList);
+
             this.Frame.Navigate(typeof(AllLocations));
         }
 
@@ -84,9 +93,9 @@ namespace Weather
         {
             base.OnNavigatedTo(args);
 
-            var parameters = (UserViewModel)args.Parameter;
+            var parameters = (ObservableCollection<LocationViewModel>)args.Parameter;
 
-            User = parameters;
+            LocationsList = parameters;
         }
     }
 }

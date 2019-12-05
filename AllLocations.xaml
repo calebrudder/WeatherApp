@@ -12,12 +12,20 @@
 
     <RelativePanel>
         <ListView Name="Locations" Height="100"  HorizontalAlignment="Stretch"
-                          ItemsSource="{x:Bind user.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged">
+                          ItemsSource="{x:Bind user.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged" RightTapped="Locations_RightTapped">
+            <ListView.ContextFlyout>
+                <MenuFlyout>
+                    <MenuFlyoutItem Click="MenuFlyoutItem_Click">Add New Location</MenuFlyoutItem>
+                    <MenuFlyoutItem Name="SetDefault" Click="Default_Click">Set Location As Default</MenuFlyoutItem>
+                    <MenuFlyoutItem x:Name="delete" Click="Delete_Click">Delete Location</MenuFlyoutItem>
+                </MenuFlyout>
+            </ListView.ContextFlyout>
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
                     <StackPanel>
                         <TextBlock x:Name="City" Text="{x:Bind information, Mode=OneWay}" FontWeight="Bold"/>
                         <TextBlock >Click to see more details</TextBlock>
+                        <Button Click="Button_Click" Name="{x:Bind Zip, Mode=OneWay}">Delete</Button>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
