@@ -127,13 +127,15 @@ namespace Weather
                     var result = confirm.ShowAsync();
                     if ((int)result.Id == 0)
                     {
-                        LocationsList.Remove(LocationsList.Where(i => i.Zip == deleteBtn.Name).Single());
+                        LocationsList.Remove(Locations.SelectedItem as LocationViewModel);
                         break;
                     }
                     else
                     {
                         break;
                     }
+
+                   
                 }
             }
             user.SaveLocations(LocationsList);
