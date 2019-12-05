@@ -108,7 +108,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Name="App_Font" Grid.Column="0">Font Size and Style:</TextBlock>
-                <ComboBox Name="Current_Font_Settings" Grid.Column="1" PlaceholderText="Size" SelectedValue="{x:Bind user.FontId, Mode=OneWay}" VerticalAlignment="Center">
+                <ComboBox Name="Current_Font_Settings" Grid.Column="1" PlaceholderText="Size" SelectedValue="{x:Bind user.State, Mode=OneWay}" VerticalAlignment="Center">
                     <x:String>16</x:String>
                     <x:String>18</x:String>
                     <x:String>20</x:String>
