@@ -1,8 +1,11 @@
 ﻿using System;
 using Weather.DataAccess;
+using Weather.Models;
+using Weather.ViewModels;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -11,6 +14,7 @@ namespace Weather
     public sealed partial class Home : Page
     {
         AddLocation location = new AddLocation();
+        public UserViewModel user;
         public Home()
         {
             this.InitializeComponent();
@@ -23,15 +27,24 @@ namespace Weather
         public async void weather()
         {
             string zip, system, userName, city, Greeting;
+            user = new UserViewModel(new User(""));
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
                 var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
 
+                user.Name = (string)settings["Name"];
+                user.City = (string)settings["City"];
+                user.State = (string)settings["State"];
+                user.DefaultZip = (string)settings["DefaultZip"];
+                user.FontId = Convert.ToInt32(settings["FontId"]);
+                user.Imperial = (bool)settings["Imperial"];
+                user.Metric = (bool)settings["Metric"];
+
                 userName = settings["Name"].ToString();
                 city = settings["City"].ToString();
                 zip = settings["DefaultZip"].ToString();
-
+                
                 if ((bool)settings["Metric"] == true)
                 {
                     system = "metric";

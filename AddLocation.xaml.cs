@@ -67,7 +67,7 @@ namespace Weather
                     User.City = addCity;
                     User.State = addState;
                     User.DefaultZip = addZip;
-                    User.FontId = 1;
+                    User.FontId = 16;
                     User.Name = "";
                     User.Imperial = true;
                     User.Metric = false;

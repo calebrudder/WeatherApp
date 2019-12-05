@@ -11,8 +11,8 @@
     <RelativePanel>
         <TextBlock Name="Greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,150,0,0" 
                    FontSize="30">Your Favorite Weather App!</TextBlock>
-        <TextBlock Name="Credits" RelativePanel.Below="Greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0">Designed and Created by: Jonathan Casper and Caleb Rudder</TextBlock>
-        <RichTextBlock Name="Message" RelativePanel.Below="Credits" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0">
+        <TextBlock Name="Credits" RelativePanel.Below="Greeting" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0" >Designed and Created by: Jonathan Casper and Caleb Rudder</TextBlock>
+        <RichTextBlock Name="Message" RelativePanel.Below="Credits" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0" >
             <Paragraph>&#x27A4;Customize your app by changing</Paragraph>
             <Paragraph Margin="15,0,0,0">the options in the settings page</Paragraph>
             <Paragraph Margin="0,10,0,0">&#x27A4;You can add multiple locations that</Paragraph>
