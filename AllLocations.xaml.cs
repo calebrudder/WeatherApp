@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using Weather.DataAccess;
 using Weather.Models;
 using Weather.ViewModels;
 using Windows.Foundation;
@@ -33,7 +35,8 @@ namespace Weather
 
         private void Add_Location_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddLocation));
+            var parameters = user;
+            this.Frame.Navigate(typeof(AddLocation), parameters);
         }
 
         private void Locations_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,11 +52,11 @@ namespace Weather
         protected override void OnNavigatedTo(NavigationEventArgs args)
         {
             LocationsList = user.Locations;
-        }
-        protected override void OnNavigatedFrom(NavigationEventArgs args)
-        {
             user.SaveLocations(LocationsList);
         }
-
+        protected override void OnNavigatedFrom(NavigationEventArgs args)
+         {
+            user.SaveLocations(LocationsList);
+        }
     }
 }

@@ -9,18 +9,9 @@ namespace Weather.Models
 {
     public class Location
     {
-        public int Zip { get; set; }
+        public string Zip { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-
-        public void Save()
-        {
-            
-        }
-
-        public void Delete()
-        {
-            
-        }
+        public string information { get; set; }
     }
 }
