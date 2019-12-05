@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Weather.DataAccess;
 using Weather.Models;
 using Windows.Storage;
 
@@ -35,6 +36,30 @@ namespace Weather.ViewModels
                 // Create ViewModels for each Location
                 foreach (var location in user.Locations)
                 {
+                    string zip = location.Zip;
+                    string system;
+                    if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
+                    {
+                        var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
+
+                        if ((bool)settings["Metric"] == true)
+                        {
+                            system = "metric";
+                        }
+                        else
+                        {
+                            system = "imperial";
+                        }
+
+                    }
+                    else
+                    {
+                        system = "imperial";
+                    }
+
+                    GetLocalWeatherAsync(zip, system, location);
+                    
+
                     var newLocation = new LocationViewModel(location);
                     newLocation.PropertyChanged += OnPropertyChanged;
                     LocationsList.Add(newLocation);
@@ -53,6 +78,24 @@ namespace Weather.ViewModels
                 };
             }
             return LocationsList;
+        }
+
+        public async void GetLocalWeatherAsync(string zip, string system, Location location)
+        {
+            string information = "";
+
+            RootObject myWeather = await WeatherMap.GetWeather(zip, system);
+
+            if (myWeather.cod == 200)
+            {
+                information = "It's currently " + myWeather.main.temp + " and " + myWeather.weather[0].description + " in " + location.City + ", " + location.State + " with wind blowing at  " + myWeather.wind.speed + " from the " + myWeather.wind.deg;
+            }
+            else
+            {
+                information = "Could not gather information on this location.";
+            }
+
+            location.information = information;
         }
 
         public void AddLocation(Location location)
