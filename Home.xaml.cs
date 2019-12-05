@@ -27,10 +27,10 @@ namespace Weather
         public async void weather()
         {
             string zip, system, userName, city, Greeting;
-            user = new UserViewModel(new User(""));
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
+                user = new UserViewModel(new User(""));
                 var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
 
                 user.Name = (string)settings["Name"];
