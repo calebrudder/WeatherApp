@@ -19,7 +19,7 @@
         <TextBlock Name="high" RelativePanel.RightOf="temp_high" RelativePanel.Below="low" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="{x:Bind user.FontId}">high</TextBlock>
         <TextBlock Name="temp_wind" RelativePanel.Below="high" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-17,0,5,0" FontSize="{x:Bind user.FontId}">Wind:</TextBlock>
         <TextBlock Name="wind" RelativePanel.Below="high" RelativePanel.RightOf="temp_wind" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="{x:Bind user.FontId}">wind</TextBlock>
-        <TextBlock Name="temp_rain" RelativePanel.Below="wind" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-16,0,5,0" FontSize="{x:Bind user.FontId}">Rain:</TextBlock>
+        <TextBlock Name="temp_rain" RelativePanel.Below="wind" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-14,0,5,0" FontSize="{x:Bind user.FontId}">Humidity:</TextBlock>
 
         <TextBlock Name="rain" RelativePanel.Below="wind" RelativePanel.RightOf="temp_rain" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="{x:Bind user.FontId}">rain</TextBlock>
 
