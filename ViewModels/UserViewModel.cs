@@ -90,7 +90,41 @@ namespace Weather.ViewModels
 
             if (myWeather.cod == 200)
             {
-                information = "It's currently " + myWeather.main.temp + " and " + myWeather.weather[0].description + " in " + location.City + ", " + location.State + " with wind blowing at  " + myWeather.wind.speed + " from the " + myWeather.wind.deg;
+                string direction = "";
+                if (myWeather.wind.deg >= 0 && myWeather.wind.deg < 45)
+                {
+                    direction = "N";
+                }
+                else if (myWeather.wind.deg > 44 && myWeather.wind.deg < 80)
+                {
+                    direction = "NE";
+                }
+                else if (myWeather.wind.deg > 79 && myWeather.wind.deg < 100)
+                {
+                    direction = "E";
+                }
+                else if (myWeather.wind.deg > 99 && myWeather.wind.deg < 140)
+                {
+                    direction = "SE";
+                }
+                else if (myWeather.wind.deg > 139 && myWeather.wind.deg < 190)
+                {
+                    direction = "S";
+                }
+                else if (myWeather.wind.deg > 189 && myWeather.wind.deg < 250)
+                {
+                    direction = "SW";
+                }
+                else if (myWeather.wind.deg > 249 && myWeather.wind.deg < 300)
+                {
+                    direction = "W";
+                }
+                else if (myWeather.wind.deg > 299 && myWeather.wind.deg < 360)
+                {
+                    direction = "NW";
+                }
+
+                information = "It's currently " + myWeather.main.temp + " and " + myWeather.weather[0].description + " in " + location.City + ", " + location.State + " with wind blowing at  " + myWeather.wind.speed + "MPH from the " + direction;
             }
             else
             {

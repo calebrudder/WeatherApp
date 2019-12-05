@@ -77,7 +77,7 @@ namespace Weather
                 tempS = tempI.ToString();
                 Temp_Low.Text = "Min: " + tempS;
 
-
+ 
                 Description.Text = myWeather.weather[0].description;
             }
             else
