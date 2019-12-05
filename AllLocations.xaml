@@ -33,7 +33,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button x:Name="Add_Location" RelativePanel.Below="Locations" RelativePanel.AlignRightWithPanel="True"
+        <Button x:Name="Add_Location" RelativePanel.Below="Locations" RelativePanel.AlignRightWithPanel="True" 
                   Height="100" Width="100" Content="+" VerticalContentAlignment="Center" FontSize="100" Click="Add_Location_Click" ToolTipService.ToolTip="Add Location">
             <Button.Style>
                 <Style TargetType="Button">
