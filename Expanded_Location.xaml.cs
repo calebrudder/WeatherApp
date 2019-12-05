@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Imaging;
 using Weather.Models;
+using Windows.Storage;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,28 +35,60 @@ namespace Weather
         }
         public async void weather(string Zip)
         {
-            string zip = Zip.ToString();
-            RootObject myWeather = await WeatherMap.GetWeather(zip, "imperial");
-            string cityName = myWeather.name.ToString();
-            City_Name.Text = cityName;
+            string system;
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
+            {
+                var settings = ApplicationData.Current.LocalSettings.Values["settings"] as ApplicationDataCompositeValue;
 
-            double tempD = myWeather.main.temp;
-            int tempI = Convert.ToInt32(tempD);
-            string tempS = tempI.ToString();
-            Current_Temp.Text = "Temp: " + tempS;
+                if ((bool)settings["Metric"] == true)
+                {
+                    system = "metric";
+                }
+                else
+                {
+                    system = "imperial";
+                }
 
-            tempD = myWeather.main.temp_max;
-            tempI = Convert.ToInt32(tempD);
-            tempS = tempI.ToString();
-            Temp_High.Text = "Max: " + tempS;
+            }
+            else
+            {
+               system = "imperial";
+            }
 
-            tempD = myWeather.main.temp_min;
-            tempI = Convert.ToInt32(tempD);
-            tempS = tempI.ToString();
-            Temp_Low.Text = "Min: " + tempS;
+            RootObject myWeather = await WeatherMap.GetWeather(Zip, system);
+
+            if (myWeather.cod == 200)
+            {
+                string cityName = myWeather.name.ToString();
+                City_Name.Text = cityName;
+
+                double tempD = myWeather.main.temp;
+                int tempI = Convert.ToInt32(tempD);
+                string tempS = tempI.ToString();
+                Current_Temp.Text = "Temp: " + tempS;
+
+                tempD = myWeather.main.temp_max;
+                tempI = Convert.ToInt32(tempD);
+                tempS = tempI.ToString();
+                Temp_High.Text = "Max: " + tempS;
+
+                tempD = myWeather.main.temp_min;
+                tempI = Convert.ToInt32(tempD);
+                tempS = tempI.ToString();
+                Temp_Low.Text = "Min: " + tempS;
 
 
-            Description.Text = myWeather.weather[0].description;
+                Description.Text = myWeather.weather[0].description;
+            }
+            else
+            {
+                City_Name.Text = "Something went wrong :(";
+                Temp_Low.Text = "";
+                Temp_High.Text = "";
+                Current_Temp.Text = "";
+                Description.Text = "";
+            }
+
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

@@ -15,14 +15,12 @@
                           ItemsSource="{x:Bind user.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
-                    <RelativePanel>
-                        <TextBlock x:Name="City" Text="{x:Bind City, Mode=OneWay}" FontWeight="Bold">
-                            
-                        </TextBlock>
-                        <TextBlock x:Name="State" Text="{x:Bind State, Mode=OneWay}" RelativePanel.RightOf="City"/>
+                    <StackPanel>
+                        <TextBlock x:Name="City" Text="{x:Bind City, Mode=OneWay}" FontWeight="Bold"/>
+                        <TextBlock x:Name="State" Text="{x:Bind State, Mode=OneWay}" />
                         <TextBlock Name="" Text="{x:Bind Zip, Mode=OneWay}"/>
-                        <TextBlock>Click to see more details</TextBlock>
-                    </RelativePanel>
+                        <TextBlock >Click to see more details</TextBlock>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
