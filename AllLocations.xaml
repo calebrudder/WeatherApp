@@ -11,7 +11,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <ListView Name="Locations" Height="100"  HorizontalAlignment="Stretch"
+        <ListView Name="Locations" Height="auto"  HorizontalAlignment="Stretch"
                           ItemsSource="{x:Bind user.Locations, Mode=OneWay}" SelectionChanged="Locations_SelectionChanged" RightTapped="Locations_RightTapped">
             <ListView.ContextFlyout>
                 <MenuFlyout>
