@@ -104,7 +104,8 @@ namespace Weather
             high.Text = Temp_high;
             string Temp_wind = myWeather.wind.speed.ToString();
             wind.Text = Temp_wind;
-
+            string humidity = myWeather.main.humidity.ToString();
+            rain.Text = humidity + "%";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
