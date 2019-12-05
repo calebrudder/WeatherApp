@@ -16,9 +16,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:LocationViewModel">
                     <StackPanel>
-                        <TextBlock x:Name="City" Text="{x:Bind City, Mode=OneWay}" FontWeight="Bold"/>
-                        <TextBlock x:Name="State" Text="{x:Bind State, Mode=OneWay}" />
-                        <TextBlock Name="" Text="{x:Bind Zip, Mode=OneWay}"/>
+                        <TextBlock x:Name="City" Text="{x:Bind information, Mode=OneWay}" FontWeight="Bold"/>
+
                         <TextBlock >Click to see more details</TextBlock>
                     </StackPanel>
                 </DataTemplate>
