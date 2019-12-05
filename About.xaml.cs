@@ -31,10 +31,13 @@ namespace Weather
         public About()
         {
             this.InitializeComponent();
-            
-
         }
         protected override void OnNavigatedTo(NavigationEventArgs args)
+        {
+            CreateUser();
+        }
+
+        public void CreateUser()
         {
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("settings"))
             {
