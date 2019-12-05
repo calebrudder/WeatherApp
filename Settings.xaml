@@ -108,13 +108,13 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Name="App_Font" Grid.Column="0">Font Size and Style:</TextBlock>
-                <ComboBox Name="Current_Font_Settings" Grid.Column="1" PlaceholderText="Font" Margin="0,-2,0,0">
-                    <x:String>Serif (16)</x:String>
-                    <x:String>Serif (20)</x:String>
-                    <x:String>Serif (24</x:String>
-                    <x:String>Sans Serif (16)</x:String>
-                    <x:String>Sans Serif (20)</x:String>
-                    <x:String>Sans Serif (24)</x:String>
+                <ComboBox Name="Current_Font_Settings" Grid.Column="1" PlaceholderText="Size" SelectedValue="{x:Bind user.FontId, Mode=OneWay}" VerticalAlignment="Center">
+                    <x:String>16</x:String>
+                    <x:String>18</x:String>
+                    <x:String>20</x:String>
+                    <x:String>22</x:String>
+                    <x:String>24</x:String>
+                    <x:String>26</x:String>
                 </ComboBox>
             </Grid>
 
