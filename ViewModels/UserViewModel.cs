@@ -214,6 +214,15 @@ namespace Weather.ViewModels
                 OnPropertyChanged(this, new PropertyChangedEventArgs("FontId"));
             }
         }
+        public string FontSize
+        {
+            get { return user.FontSize; }
+            set
+            {
+                user.FontSize = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("FontId"));
+            }
+        }
 
         public string City
         {
