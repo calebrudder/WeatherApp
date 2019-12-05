@@ -112,8 +112,28 @@ namespace Weather
             {
                 if (location.Zip == rightClicked.Zip)
                 {
-                    LocationsList.Remove(Locations.SelectedItem as LocationViewModel);
-                    break;
+                    MessageDialog confirm = new MessageDialog("Are you sure you want to delete the location " + location.City + ", " + location.State + "?");
+
+                    confirm.Commands.Add(new UICommand("Yes")
+                    {
+                        Id = 0
+                    });
+                    confirm.Commands.Add(new UICommand("No")
+                    {
+                        Id = 1
+                    });
+                    confirm.DefaultCommandIndex = 0;
+                    confirm.CancelCommandIndex = 1;
+                    var result = confirm.ShowAsync();
+                    if ((int)result.Id == 0)
+                    {
+                        LocationsList.Remove(LocationsList.Where(i => i.Zip == deleteBtn.Name).Single());
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
             user.SaveLocations(LocationsList);
@@ -132,11 +152,34 @@ namespace Weather
             {
                 if (location.Zip ==  deleteBtn.Name)
                 {
-                    LocationsList.Remove(LocationsList.Where(i => i.Zip == deleteBtn.Name).Single());
-                    break;
+                    MessageDialog confirm = new MessageDialog("Are you sure you want to delete the location " + location.City + ", " + location.State + "?");
+
+                    confirm.Commands.Add(new UICommand("Yes")
+                    {
+                        Id = 0
+                    });
+                    confirm.Commands.Add(new UICommand("No")
+                    {
+                        Id = 1
+                    });
+                    confirm.DefaultCommandIndex = 0;
+                    confirm.CancelCommandIndex = 1;
+                    var result = confirm.ShowAsync();
+                    if ((int)result.Id == 0)
+                    {
+                        LocationsList.Remove(LocationsList.Where(i => i.Zip == deleteBtn.Name).Single());
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+
                 }
             }
             user.SaveLocations(LocationsList);
         }
+        
     }
 }

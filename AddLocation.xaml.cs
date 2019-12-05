@@ -41,7 +41,7 @@ namespace Weather
         private void AddCity_Button_Click(object sender, RoutedEventArgs e)
         {
             string addCity = City.Text;
-            string addState = State.Text;
+            string addState = State.SelectedValue.ToString();
             string addZip = Zip.Text;
             string system = "imperial";
 
